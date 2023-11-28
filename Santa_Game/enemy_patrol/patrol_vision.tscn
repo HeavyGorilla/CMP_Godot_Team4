@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://diklfqrmaemno"]
+
+[ext_resource type="Script" path="res://enemy_patrol/patrol_vision.gd" id="1_fsafy"]
+
+[node name="patrol_vision" type="Area2D"]
+script = ExtResource("1_fsafy")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, 0, 656, 646, 788, 593, 851, 485, 910, 368, 962, 266, 940, 118)
+
+[node name="place_circular_sector_image" type="Sprite2D" parent="."]
+
+[node name="Polygon2D" type="Polygon2D" parent="place_circular_sector_image"]
+color = Color(1, 1, 0.156863, 0.2)
+polygon = PackedVector2Array(-4, 1, 939, 116, 963, 266, 791, 591, 655, 644)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
