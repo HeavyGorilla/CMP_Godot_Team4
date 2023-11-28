@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://5okw42snj5wq"]
+
+[ext_resource type="Script" path="res://enemy_boss/boss_label_for_test.gd" id="1_86uaj"]
+
+[node name="boss_label_for_test" type="Label"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "BOSS"
+horizontal_alignment = 2
+script = ExtResource("1_86uaj")
