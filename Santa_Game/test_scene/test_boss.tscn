@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://dp8ojla0avpph"]
+
+[ext_resource type="PackedScene" uid="uid://cx653js0ld08t" path="res://enemy_boss/boss.tscn" id="1_mcs0w"]
+[ext_resource type="PackedScene" uid="uid://8e8jhcmfn45r" path="res://player_for_test/player_for_test.tscn" id="2_x1ws2"]
+[ext_resource type="PackedScene" uid="uid://dyudljedop6i7" path="res://player_for_test/player_label_for_test.tscn" id="3_70xyo"]
+[ext_resource type="PackedScene" uid="uid://5okw42snj5wq" path="res://enemy_boss/boss_label_for_test.tscn" id="4_3hidu"]
+
+[node name="test_boss" type="Node2D"]
+
+[node name="boss" parent="." groups=["boss"] instance=ExtResource("1_mcs0w")]
+position = Vector2(1024, 105)
+
+[node name="player_for_test" parent="." groups=["player"] instance=ExtResource("2_x1ws2")]
+position = Vector2(131, 539)
+
+[node name="player_label_for_test" parent="." instance=ExtResource("3_70xyo")]
+offset_left = 35.0
+offset_top = 31.0
+offset_right = 93.0
+offset_bottom = 57.0
+
+[node name="boss_label_for_test" parent="." instance=ExtResource("4_3hidu")]
+offset_left = 1015.0
+offset_top = 35.0
+offset_right = 1056.0
+offset_bottom = 61.0
