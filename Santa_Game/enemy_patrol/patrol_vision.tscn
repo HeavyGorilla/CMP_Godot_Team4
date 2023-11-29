@@ -6,9 +6,11 @@
 script = ExtResource("1_fsafy")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+rotation = -0.453475
 polygon = PackedVector2Array(0, 0, 656, 646, 788, 593, 851, 485, 910, 368, 962, 266, 940, 118)
 
 [node name="place_circular_sector_image" type="Sprite2D" parent="."]
+rotation = -0.451265
 
 [node name="Polygon2D" type="Polygon2D" parent="place_circular_sector_image"]
 color = Color(1, 1, 0.156863, 0.2)
