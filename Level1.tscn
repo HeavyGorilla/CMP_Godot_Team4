@@ -583,8 +583,6 @@ scale = Vector2(0.72, 0.72)
 metadata/_edit_horizontal_guides_ = []
 
 [node name="level1_map" parent="." instance=ExtResource("1_ov3ue")]
-position = Vector2(-1683.33, -713.888)
-scale = Vector2(1.35761, 1.3316)
 
 [node name="obstacle" type="TileMap" parent="."]
 visible = false
