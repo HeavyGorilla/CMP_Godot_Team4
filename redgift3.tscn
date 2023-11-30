@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://jmtyvdsn4aef"]
+
+[ext_resource type="Script" path="res://redgift3.gd" id="1_c3aim"]
+[ext_resource type="Texture2D" uid="uid://dok8m8pmcb7xd" path="res://graygift.png" id="2_mujnu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jb0xm"]
+radius = 19.4165
+
+[node name="RedGift3" type="RigidBody2D"]
+script = ExtResource("1_c3aim")
+
+[node name="Redgift" type="Sprite2D" parent="."]
+scale = Vector2(1.0437, 1.04)
+texture = ExtResource("2_mujnu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.52, 1.52)
+shape = SubResource("CircleShape2D_jb0xm")

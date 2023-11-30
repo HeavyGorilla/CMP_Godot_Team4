@@ -8,3 +8,13 @@ func _ready():
 func _on_yellow_gift_1_yellowgift_collected():
 	yellowPoints = yellowPoints + 1
 	_ready()
+
+
+func _on_yellow_gift_2_yellowgift_collected():
+	yellowPoints = yellowPoints + 1
+	_ready()
+
+
+func _on_yellow_gift_3_yellowgift_collected():
+	yellowPoints = yellowPoints + 1
+	_ready()

@@ -59,10 +59,14 @@ resque={
 [layer_names]
 
 2d_physics/layer_1="player"
-2d_physics/layer_2="tree"
+2d_physics/layer_2="obstacle"
 2d_physics/layer_3="prison"
-2d_physics/layer_4="gift"
-2d_physics/layer_5="box"
+2d_physics/layer_4="yellow gift"
+2d_physics/layer_5="yellow box"
+2d_physics/layer_6="green gift"
+2d_physics/layer_7="green box"
+2d_physics/layer_8="red gift"
+2d_physics/layer_9="red box"
 
 [rendering]
 
