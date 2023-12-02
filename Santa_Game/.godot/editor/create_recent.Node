@@ -1,0 +1,15 @@
+TextureProgressBar
+Camera2D
+Sprite2D
+Node2D
+Timer
+AnimationPlayer
+CollisionShape2D
+Area2D
+RigidBody2D
+CharacterBody2D
+Marker2D
+AnimatedSprite2D
+Node
+RayCast2D
+VisibleOnScreenNotifier2D
