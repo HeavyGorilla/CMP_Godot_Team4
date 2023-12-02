@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bt05m7wj1ywtq"]
+
+[ext_resource type="Script" path="res://main/main.gd" id="1_n7eeo"]
+[ext_resource type="PackedScene" uid="uid://c6wlfn7b4siue" path="res://player/Player.tscn" id="1_nfd8s"]
+[ext_resource type="PackedScene" uid="uid://clh85wx7d4uj6" path="res://box/box.tscn" id="3_x2qf2"]
+[ext_resource type="Texture2D" uid="uid://m4m3npv05luf" path="res://Assets/crosshair.png" id="4_vqbl2"]
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_n7eeo")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("1_nfd8s")]
+z_index = 1
+position = Vector2(-3, 2)
+
+[node name="ZoomTimer" type="Timer" parent="."]
+
+[node name="box" parent="." instance=ExtResource("3_x2qf2")]
+position = Vector2(1, -123)
+
+[node name="Crosshair" type="Node2D" parent="."]
+scale = Vector2(0.0800002, 0.0800002)
+
+[node name="Sprite2D" type="Sprite2D" parent="Crosshair"]
+texture = ExtResource("4_vqbl2")
+
+[connection signal="timeout" from="ZoomTimer" to="Player" method="_on_ZoomTimer_timeout"]
