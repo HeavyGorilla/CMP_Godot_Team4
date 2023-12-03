@@ -21,7 +21,6 @@ func _on_body_exited(body):
 		touched_rudolph = null
 
 func _input(event):
-	# 여기서 입력을 감지하고 처리합니다.
 	if touched_rudolph != null and event.is_action_pressed("rescue"):
 		emit_signal("rudolph_rescued")
 		print("루돌프 구출")
