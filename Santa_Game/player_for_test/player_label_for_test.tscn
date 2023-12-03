@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyudljedop6i7"]
+
+[ext_resource type="Script" path="res://player_for_test/player_label_for_test.gd" id="1_3q8wn"]
+
+[node name="player_label_for_test" type="Label"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "PLAYER"
+script = ExtResource("1_3q8wn")

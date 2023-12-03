@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cx653js0ld08t"]
+
+[ext_resource type="Script" path="res://enemy_boss/boss.gd" id="1_fpqwf"]
+[ext_resource type="Texture2D" uid="uid://djy3hlusu1p15" path="res://icon.svg" id="2_qx042"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1b63t"]
+size = Vector2(131, 129)
+
+[node name="boss" type="CharacterBody2D"]
+modulate = Color(0.988235, 0, 0, 1)
+script = ExtResource("1_fpqwf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_qx042")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, 1.5)
+shape = SubResource("RectangleShape2D_1b63t")
