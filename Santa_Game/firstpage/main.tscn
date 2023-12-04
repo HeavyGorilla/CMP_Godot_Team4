@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://clc827byygcek"]
+
+[ext_resource type="Texture2D" uid="uid://c7rw3udvlj6ir" path="res://Assets/background.png" id="1_b78vs"]
+[ext_resource type="PackedScene" uid="uid://f88msr0mg0tw" path="res://firstpage/setting.tscn" id="2_e3qcx"]
+[ext_resource type="PackedScene" uid="uid://da5h5htheogvh" path="res://firstpage/exit.tscn" id="3_wfen7"]
+[ext_resource type="PackedScene" uid="uid://w7mwu6htu8ev" path="res://firstpage/GameStart.tscn" id="4_wvygb"]
+[ext_resource type="PackedScene" uid="uid://cfxe0ijsf2wel" path="res://firstpage/Instruction.tscn" id="5_imm2y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u2y3i"]
+size = Vector2(1618, 910)
+
+[node name="main" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(803, 449)
+scale = Vector2(0.356261, 0.35566)
+texture = ExtResource("1_b78vs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(802.5, 449)
+shape = SubResource("RectangleShape2D_u2y3i")
+
+[node name="setting" parent="." instance=ExtResource("2_e3qcx")]
+position = Vector2(1183, -67)
+
+[node name="exit" parent="." instance=ExtResource("3_wfen7")]
+position = Vector2(1528, 53)
+scale = Vector2(0.94, 0.94)
+
+[node name="GameStart" parent="." instance=ExtResource("4_wvygb")]
+position = Vector2(483, 130)
+
+[node name="Instruction" parent="." instance=ExtResource("5_imm2y")]
+position = Vector2(666, 395)
+
+[connection signal="input_event" from="Instruction" to="Instruction" method="_on_input_event"]

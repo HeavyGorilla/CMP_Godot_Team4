@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://c3mrkdvi1a8np"]
+
+[ext_resource type="Texture2D" uid="uid://c0fkkntthsub3" path="res://Assets/settings.png" id="1_jogc1"]
+[ext_resource type="Script" path="res://settings/Area2D.gd" id="2_wcpsa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gem4l"]
+size = Vector2(1610, 906)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d71cp"]
+size = Vector2(64, 64)
+
+[node name="settingcontent" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(800, 450)
+scale = Vector2(0.353, 0.353)
+texture = ExtResource("1_jogc1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(800, 450)
+shape = SubResource("RectangleShape2D_gem4l")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("2_wcpsa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1532, 70)
+shape = SubResource("RectangleShape2D_d71cp")
+
+[connection signal="input_event" from="Area2D" to="Area2D" method="_on_input_event"]
