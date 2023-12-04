@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://brqd4skyqsx04"]
+
+[ext_resource type="PackedScene" uid="uid://bqnj70b5dui6m" path="res://enemy_patrol/patrol.tscn" id="1_v5ktb"]
+[ext_resource type="PackedScene" uid="uid://8e8jhcmfn45r" path="res://player_for_test/player_for_test.tscn" id="2_hr8mm"]
+[ext_resource type="PackedScene" uid="uid://tiklheqdyvq4" path="res://test_object/test_obstacle.tscn" id="3_vmqp0"]
+
+[node name="test_patrol" type="Node2D"]
+position = Vector2(9, 1)
+
+[node name="patrol" parent="." instance=ExtResource("1_v5ktb")]
+position = Vector2(221, 447)
+
+[node name="player_for_test" parent="." groups=["player"] instance=ExtResource("2_hr8mm")]
+position = Vector2(436, 129)
+
+[node name="obstacle_test" parent="." instance=ExtResource("3_vmqp0")]
+position = Vector2(22, 275)

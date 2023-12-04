@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cka3e7s4fq3yb"]
+
+[ext_resource type="Script" path="res://enemy_boss/boss_bullet.gd" id="1_42ttf"]
+[ext_resource type="Texture2D" uid="uid://djy3hlusu1p15" path="res://icon.svg" id="2_m7o4c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rq84g"]
+size = Vector2(32, 32)
+
+[node name="boss_bullet" type="Area2D"]
+script = ExtResource("1_42ttf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_m7o4c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_rq84g")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
