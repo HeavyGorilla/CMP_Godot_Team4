@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://blctwedh08n78"]
+
+[ext_resource type="Texture2D" uid="uid://cc0nv5o5up2xg" path="res://Assets/stage2 clear.png" id="1_pkrnx"]
+[ext_resource type="Script" path="res://Game/Restart.gd" id="2_md7qp"]
+[ext_resource type="Script" path="res://Game/Quit.gd" id="3_ud0r1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bq0v8"]
+size = Vector2(1605, 905)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m0118"]
+size = Vector2(320, 127)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sv4cg"]
+size = Vector2(320, 127)
+
+[node name="stage2clear" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(800, 450)
+scale = Vector2(0.353, 0.353)
+texture = ExtResource("1_pkrnx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(801, 451)
+shape = SubResource("RectangleShape2D_bq0v8")
+
+[node name="Restart" type="Area2D" parent="."]
+script = ExtResource("2_md7qp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Restart"]
+position = Vector2(605, 647)
+shape = SubResource("RectangleShape2D_m0118")
+
+[node name="Quit" type="Area2D" parent="."]
+script = ExtResource("3_ud0r1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Quit"]
+position = Vector2(1016, 647)
+shape = SubResource("RectangleShape2D_sv4cg")
+
+[connection signal="input_event" from="Restart" to="Restart" method="_on_input_event"]
+[connection signal="input_event" from="Quit" to="Quit" method="_on_input_event"]

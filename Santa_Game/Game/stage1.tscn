@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://cv3t8qcdol8xj"]
+
+[ext_resource type="FontFile" uid="uid://b4kp287dkplub" path="res://Assets/DungGeunMo.otf" id="1_043l3"]
+[ext_resource type="Script" path="res://Game/stage1.gd" id="1_gytt6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1hmut"]
+size = Vector2(248, 34)
+
+[node name="Game" type="Area2D"]
+script = ExtResource("1_gytt6")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 136.0
+offset_top = 80.0
+offset_right = 368.0
+offset_bottom = 136.0
+theme_override_fonts/font = ExtResource("1_043l3")
+theme_override_font_sizes/font_size = 27
+text = "Game Start YEAH!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(252, 110)
+shape = SubResource("RectangleShape2D_1hmut")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

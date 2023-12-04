@@ -1,0 +1,54 @@
+[gd_scene load_steps=9 format=3 uid="uid://c0krrhleg7eyh"]
+
+[ext_resource type="Texture2D" uid="uid://bkqs0ibkfycxs" path="res://Assets/stage1.png" id="1_e0lty"]
+[ext_resource type="Script" path="res://instruction/ins2_main.gd" id="2_ghl6t"]
+[ext_resource type="Script" path="res://instruction/ins2_ins1.gd" id="3_0i6gk"]
+[ext_resource type="Script" path="res://instruction/ins2_ins3.gd" id="4_47io2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7rina"]
+size = Vector2(1618, 914)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4icxw"]
+size = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jbdpv"]
+size = Vector2(56, 72)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gcry4"]
+size = Vector2(56, 72)
+
+[node name="instruction2" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(801, 450)
+scale = Vector2(0.353, 0.354)
+texture = ExtResource("1_e0lty")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(804, 450)
+shape = SubResource("RectangleShape2D_7rina")
+
+[node name="ins2_main" type="Area2D" parent="."]
+script = ExtResource("2_ghl6t")
+
+[node name="ins2_main" type="CollisionShape2D" parent="ins2_main"]
+position = Vector2(1528, 72)
+shape = SubResource("RectangleShape2D_4icxw")
+
+[node name="ins2_ins1" type="Area2D" parent="."]
+script = ExtResource("3_0i6gk")
+
+[node name="ins2_ins1" type="CollisionShape2D" parent="ins2_ins1"]
+position = Vector2(768, 776)
+shape = SubResource("RectangleShape2D_jbdpv")
+
+[node name="ins2_ins3" type="Area2D" parent="."]
+script = ExtResource("4_47io2")
+
+[node name="ins2_ins3" type="CollisionShape2D" parent="ins2_ins3"]
+position = Vector2(835, 776)
+shape = SubResource("RectangleShape2D_gcry4")
+
+[connection signal="input_event" from="ins2_main" to="ins2_main" method="_on_input_event"]
+[connection signal="input_event" from="ins2_ins1" to="ins2_ins1" method="_on_input_event"]
+[connection signal="input_event" from="ins2_ins3" to="ins2_ins3" method="_on_input_event"]
