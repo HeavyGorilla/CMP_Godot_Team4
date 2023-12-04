@@ -6,7 +6,7 @@ signal complete_giftA
 func _ready():
 	text = "GiftA Points: "+str(giftAPoints)+"/3"
 	
-	if giftAPoints >= 1:
+	if giftAPoints >= 3:
 		print("giftA 완료")
 		emit_signal("complete_giftA")
 

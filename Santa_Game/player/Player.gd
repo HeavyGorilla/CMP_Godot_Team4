@@ -11,8 +11,6 @@ class_name santa2
 @export var ammo : PackedScene
 var enemy
 @onready var animated_sprite = $AnimatedSprite2D
-@onready var SantaCollision = $Area2D/SantaCollision
-@onready var TouchGiftCollision = $TouchGiftCollision
 var giftpoints = 0
 
 var is_interacting_with_box = false
@@ -37,8 +35,6 @@ func _ready():
 	animated_sprite.connect("animation_finished", Callable(self, "_on_AnimatedSprite2D_animation_finished"))
 
 func _physics_process(_delta):
-	SantaCollision.disabled = false
-	TouchGiftCollision.disabled = true
 	$RudolfBar.value = Rudolf_get
 	$HealthBar.value = health
 	velocity = Input.get_vector("left", "right", "up", "down") * 150
@@ -47,33 +43,22 @@ func _physics_process(_delta):
 	if !is_interacting_with_box:
 		if not is_shooting:
 			if Input.is_action_pressed("up"):
-				SantaCollision.disabled = false
-				TouchGiftCollision.disabled = true
 				current_direction = Direction.UP
 				animated_sprite.play("up_walk")
 			elif Input.is_action_pressed("down"):
-				SantaCollision.disabled = false
-				TouchGiftCollision.disabled = true
 				current_direction = Direction.DOWN
 				animated_sprite.play("down_walk")
 			elif Input.is_action_pressed("left"):
-				SantaCollision.disabled = false
-				TouchGiftCollision.disabled = true
 				current_direction = Direction.LEFT
 				animated_sprite.flip_h = false
 				animated_sprite.play("left_walk")
 			elif Input.is_action_pressed("right"):
-				SantaCollision.disabled = false
-				TouchGiftCollision.disabled = true
 				current_direction = Direction.RIGHT
 				animated_sprite.flip_h = true
 				animated_sprite.play("left_walk")
 			else:
 				animated_sprite.stop()
-			if Input.is_action_pressed("reset_gift"):
-				SantaCollision.disabled = true
-				TouchGiftCollision.disabled = false
-	
+
 	if Input.is_action_just_pressed("shoot") and can_shoot:
 		is_shooting = true  # Set to true when shooting starts
 		can_shoot = false  # Disable shooting until reload
