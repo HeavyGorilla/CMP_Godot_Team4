@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b3e4udemf7jow"]
+[gd_scene load_steps=21 format=3 uid="uid://b3e4udemf7jow"]
 
 [ext_resource type="Texture2D" uid="uid://b2ik7njwnesjd" path="res://tilemap_asset/16x16/Tilesets/Solaria Demo Update 01.png" id="1_doqah"]
 [ext_resource type="Texture2D" uid="uid://c4aqbth7m6l2p" path="res://tilemap_asset/16x16/kenney_tiny-ski/Tilemap/tilemap_packed.png" id="2_wgd84"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://m4m3npv05luf" path="res://Assets/crosshair.png" id="8_ptltf"]
 [ext_resource type="PackedScene" uid="uid://cx653js0ld08t" path="res://enemy_boss/boss.tscn" id="9_hgloh"]
 [ext_resource type="PackedScene" uid="uid://5okw42snj5wq" path="res://enemy_boss/boss_label_for_test.tscn" id="10_lj47f"]
+[ext_resource type="PackedScene" uid="uid://8e8jhcmfn45r" path="res://player_for_test/player_for_test.tscn" id="10_p21yw"]
+[ext_resource type="PackedScene" uid="uid://dyudljedop6i7" path="res://player_for_test/player_label_for_test.tscn" id="11_i6lrl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cgfh5"]
 texture = ExtResource("1_doqah")
@@ -4458,12 +4460,6 @@ sources/6 = SubResource("TileSetAtlasSource_3hsbv")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="boss_label_for_test" parent="CanvasLayer" instance=ExtResource("10_lj47f")]
-offset_left = 19.0
-offset_top = 17.0
-offset_right = 60.0
-offset_bottom = 43.0
-
 [node name="background" type="TileMap" parent="."]
 position = Vector2(-2050, -713.888)
 scale = Vector2(1.64308, 1.6116)
@@ -4503,5 +4499,27 @@ scale = Vector2(0.0800002, 0.0800002)
 [node name="Sprite2D" type="Sprite2D" parent="main2/Crosshair"]
 texture = ExtResource("8_ptltf")
 
-[node name="boss" parent="." groups=["boss"] instance=ExtResource("9_hgloh")]
-position = Vector2(-55, -128)
+[node name="test_boss2" type="Node2D" parent="."]
+position = Vector2(-1080, -240)
+
+[node name="boss" parent="test_boss2" groups=["boss"] instance=ExtResource("9_hgloh")]
+position = Vector2(1024, 105)
+collision_layer = 512
+collision_mask = 3
+
+[node name="player_for_test" parent="test_boss2" groups=["player", "santa"] instance=ExtResource("10_p21yw")]
+position = Vector2(131, 539)
+
+[node name="player_label_for_test" parent="test_boss2" instance=ExtResource("11_i6lrl")]
+offset_left = 35.0
+offset_top = 31.0
+offset_right = 93.0
+offset_bottom = 57.0
+metadata/_edit_use_anchors_ = true
+
+[node name="boss_label_for_test" parent="test_boss2" instance=ExtResource("10_lj47f")]
+offset_left = 1015.0
+offset_top = 35.0
+offset_right = 1056.0
+offset_bottom = 61.0
+metadata/_edit_use_anchors_ = true
