@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://coq7wsmxvqnl4"]
+[gd_scene load_steps=40 format=3 uid="uid://coq7wsmxvqnl4"]
 
 [ext_resource type="Texture2D" uid="uid://b2ik7njwnesjd" path="res://tilemap_asset/16x16/Tilesets/Solaria Demo Update 01.png" id="1_mvqd5"]
 [ext_resource type="Texture2D" uid="uid://c4aqbth7m6l2p" path="res://tilemap_asset/16x16/kenney_tiny-ski/Tilemap/tilemap_packed.png" id="2_0w0rv"]
@@ -26,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://cq5qxlddn65cg" path="res://gift/giftB2.tscn" id="20_g1rof"]
 [ext_resource type="PackedScene" uid="uid://8hn8ur8b1381" path="res://gift/giftB3.tscn" id="21_a5urq"]
 [ext_resource type="PackedScene" uid="uid://kyi7t88opsbw" path="res://player/Player1.tscn" id="26_4e378"]
+[ext_resource type="PackedScene" uid="uid://bqnj70b5dui6m" path="res://enemy_patrol/patrol.tscn" id="27_5qvfd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cgfh5"]
 texture = ExtResource("1_mvqd5")
@@ -2783,25 +2784,25 @@ script = ExtResource("6_es2kw")
 
 [node name="Gifts" type="Node" parent="."]
 
-[node name="GiftA1" parent="Gifts" instance=ExtResource("14_auglw")]
+[node name="GiftA1" parent="Gifts" groups=["gift"] instance=ExtResource("14_auglw")]
 position = Vector2(1341, 4164)
 scale = Vector2(0.72, 0.72)
 mass = 3.0
 linear_damp = 2.0
 
-[node name="GiftA2" parent="Gifts" instance=ExtResource("16_4fd2r")]
+[node name="GiftA2" parent="Gifts" groups=["gift"] instance=ExtResource("16_4fd2r")]
 position = Vector2(1340, 4091)
 scale = Vector2(0.72, 0.72)
 mass = 3.0
 linear_damp = 2.0
 
-[node name="GiftA3" parent="Gifts" instance=ExtResource("17_xej8f")]
+[node name="GiftA3" parent="Gifts" groups=["gift"] instance=ExtResource("17_xej8f")]
 position = Vector2(1341, 4023)
 scale = Vector2(0.72, 0.72)
 mass = 3.0
 linear_damp = 2.0
 
-[node name="GiftB1" parent="Gifts" instance=ExtResource("19_gqvql")]
+[node name="GiftB1" parent="Gifts" groups=["gift"] instance=ExtResource("19_gqvql")]
 position = Vector2(-126, 1621)
 scale = Vector2(0.731981, 0.731981)
 collision_layer = 32
@@ -2809,7 +2810,7 @@ collision_mask = 99
 mass = 3.0
 gravity_scale = 0.0
 
-[node name="GiftB2" parent="Gifts" instance=ExtResource("20_g1rof")]
+[node name="GiftB2" parent="Gifts" groups=["gift"] instance=ExtResource("20_g1rof")]
 position = Vector2(-49.0002, 1620)
 scale = Vector2(0.707795, 0.70498)
 collision_layer = 32
@@ -2817,7 +2818,7 @@ collision_mask = 99
 mass = 3.0
 gravity_scale = 0.0
 
-[node name="GiftB3" parent="Gifts" instance=ExtResource("21_a5urq")]
+[node name="GiftB3" parent="Gifts" groups=["gift"] instance=ExtResource("21_a5urq")]
 position = Vector2(29.9996, 1621)
 scale = Vector2(0.72, 0.72)
 collision_layer = 32
@@ -2825,7 +2826,7 @@ collision_mask = 99
 mass = 3.0
 gravity_scale = 0.0
 
-[node name="GiftC1" parent="Gifts" instance=ExtResource("9_ehcnq")]
+[node name="GiftC1" parent="Gifts" groups=["gift"] instance=ExtResource("9_ehcnq")]
 position = Vector2(312, 3350)
 scale = Vector2(0.72, 0.72)
 collision_layer = 128
@@ -2833,7 +2834,7 @@ collision_mask = 387
 mass = 3.0
 gravity_scale = 0.0
 
-[node name="GiftC2" parent="Gifts" instance=ExtResource("10_mjmj8")]
+[node name="GiftC2" parent="Gifts" groups=["gift"] instance=ExtResource("10_mjmj8")]
 position = Vector2(312, 3421)
 scale = Vector2(0.72, 0.72)
 collision_layer = 128
@@ -2841,7 +2842,7 @@ collision_mask = 387
 mass = 3.0
 gravity_scale = 0.0
 
-[node name="GiftC3" parent="Gifts" instance=ExtResource("11_jb72o")]
+[node name="GiftC3" parent="Gifts" groups=["gift"] instance=ExtResource("11_jb72o")]
 position = Vector2(312, 3495)
 scale = Vector2(0.72, 0.72)
 collision_layer = 128
@@ -2958,6 +2959,11 @@ position = Vector2(1723.61, 1016.67)
 rotation = -0.00569615
 scale = Vector2(1.16699, 1.16699)
 
+[node name="patrol" parent="." instance=ExtResource("27_5qvfd")]
+position = Vector2(848.611, -37.5)
+collision_layer = 512
+collision_mask = 1023
+
 [connection signal="complete_giftA" from="CanvasLayer/giftAPointLabel" to="Player1" method="_on_gift_a_point_label_complete_gift_a"]
 [connection signal="complete_giftB" from="CanvasLayer/giftBPointLabel" to="Player1" method="_on_gift_b_point_label_complete_gift_b"]
 [connection signal="complete_giftC" from="CanvasLayer/giftCPointLabel" to="Player1" method="_on_gift_c_point_label_complete_gift_c"]
@@ -2983,9 +2989,5 @@ scale = Vector2(1.16699, 1.16699)
 [connection signal="body_entered" from="GiftCBox" to="Gifts/GiftC2" method="_on_red_box_body_entered"]
 [connection signal="body_entered" from="GiftCBox" to="Gifts/GiftC3" method="_on_gift_c_box_body_entered"]
 [connection signal="body_entered" from="GiftCBox" to="Gifts/GiftC3" method="_on_red_box_body_entered"]
-[connection signal="body_exited" from="Prison" to="Prison" method="_on_body_exited"]
-[connection signal="body_exited" from="Prison2" to="Prison2" method="_on_body_exited"]
-[connection signal="body_exited" from="Prison3" to="Prison3" method="_on_body_exited"]
-[connection signal="body_exited" from="Prison4" to="Prison4" method="_on_body_exited"]
-[connection signal="body_exited" from="Prison5" to="Prison5" method="_on_body_exited"]
 [connection signal="body_entered" from="FinishArea" to="Player1" method="_on_finish_area_body_entered"]
+[connection signal="rudolph_rescued" from="Player1" to="CanvasLayer/rudolphPointLabel" method="_on_player_1_rudolph_rescued"]

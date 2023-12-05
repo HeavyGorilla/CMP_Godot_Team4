@@ -8,4 +8,5 @@ func _process(delta):
 
 func _on_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-		get_tree().change_scene_to_file("res://Game/stage1.tscn")
+
+		get_tree().change_scene_to_file("res://level/Level1.tscn")

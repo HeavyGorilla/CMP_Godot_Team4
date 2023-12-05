@@ -12,10 +12,13 @@ var enemy
 var giftpoints = 0
 var is_shooting = false
 
-var is_interacting_with_box = false
+var is_interacting_with_gift = false
 
 enum Direction { UP, DOWN, LEFT, RIGHT }
 var current_direction = Direction.DOWN
+
+var touched_rudolph = null
+signal rudolph_rescued
 
 # health
 var health = 100
@@ -28,7 +31,7 @@ func _physics_process(_delta):
 	velocity = Input.get_vector("left", "right", "up", "down") * 150
 	move_and_slide()
 
-	if !is_interacting_with_box:
+	if !is_interacting_with_gift:
 		if Input.is_action_pressed("up"):
 			current_direction = Direction.UP
 			animated_sprite.play("up_walk")
@@ -46,14 +49,14 @@ func _physics_process(_delta):
 		else:
 			animated_sprite.stop()
 		
-	if is_interacting_with_box:
+	if is_interacting_with_gift:
 		if not is_shooting:
 			if Input.is_action_pressed("up"):
 				current_direction = Direction.UP
 				animated_sprite.play("up_box")
 			elif Input.is_action_pressed("down"):
 				current_direction = Direction.DOWN
-				animated_sprite.play("down_walk")
+				animated_sprite.play("down_box")
 			elif Input.is_action_pressed("left"):
 				current_direction = Direction.LEFT
 				animated_sprite.flip_h = false
@@ -89,8 +92,36 @@ func _on_finish_area_body_entered(body):
 	if body is santa && giftpoints>=3:
 		get_tree().change_scene_to_file("res://level/Level2.tscn")
 
+#func _on_area_2d_area_entered(area):
+#	if body.is_in_group("gift"):
+#		is_interacting_with_gift = true
+#
+#func _on_area_2d_area_exited(area):
+#	if body.is_in_group("gift"):
+#		is_interacting_with_gift = false
+
+func _on_area_2d_body_entered(body):
+	if body.is_in_group("gift"):
+		is_interacting_with_gift = true
+
+func _on_area_2d_body_exited(body):
+	if body.is_in_group("gift"):
+		is_interacting_with_gift = false
+
 func _on_area_2d_area_entered(area):
-	is_interacting_with_box = true
+	if area.is_in_group("prison"):
+		print("감옥 터치")
+		if touched_rudolph == null:
+			touched_rudolph = area
+
 
 func _on_area_2d_area_exited(area):
-	is_interacting_with_box = false
+	if area.is_in_group("prison"):
+		if area == touched_rudolph:
+			touched_rudolph = null
+			
+func _input(event):
+	if touched_rudolph != null and event.is_action_pressed("rescue"):
+		emit_signal("rudolph_rescued")
+		print("루돌프 구출")
+		touched_rudolph.queue_free()

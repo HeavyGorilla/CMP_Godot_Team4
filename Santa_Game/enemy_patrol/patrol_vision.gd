@@ -7,7 +7,7 @@ func _ready():
 
 # 플레이어가 시야 범위 내에 들어왔을 때 호출
 func _on_body_entered(body):
-	if body.is_in_group("player"):
+	if body.is_in_group("santa"):
 		# RayCast2D의 타겟 위치를 플레이어 위치로 설정
 		ray_cast.target_position = body.global_position - global_position
 		ray_cast.force_raycast_update()

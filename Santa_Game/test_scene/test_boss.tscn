@@ -10,7 +10,7 @@
 [node name="boss" parent="." groups=["boss"] instance=ExtResource("1_mcs0w")]
 position = Vector2(1024, 105)
 
-[node name="player_for_test" parent="." groups=["player"] instance=ExtResource("2_x1ws2")]
+[node name="player_for_test" parent="." groups=["player", "santa"] instance=ExtResource("2_x1ws2")]
 position = Vector2(131, 539)
 
 [node name="player_label_for_test" parent="." instance=ExtResource("3_70xyo")]
