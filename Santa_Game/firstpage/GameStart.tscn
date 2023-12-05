@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://w7mwu6htu8ev"]
+
+[ext_resource type="Script" path="res://firstpage/GameStart.gd" id="1_bthp6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vcimt"]
+size = Vector2(256, 48)
+
+[node name="GameStart" type="Area2D"]
+script = ExtResource("1_bthp6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(320, 216)
+shape = SubResource("RectangleShape2D_vcimt")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

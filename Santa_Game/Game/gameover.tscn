@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://bqk3cxl45t0v0"]
+
+[ext_resource type="Texture2D" uid="uid://cjuca8oey0u6d" path="res://Assets/gameover.png" id="1_jb4a4"]
+[ext_resource type="Script" path="res://Game/Retry.gd" id="2_sf3kf"]
+[ext_resource type="Script" path="res://Game/Quit.gd" id="3_8r1yx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bjc8s"]
+size = Vector2(1605, 905)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4w8qv"]
+size = Vector2(320, 127)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ufr8h"]
+size = Vector2(320, 127)
+
+[node name="gameover" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(800, 450)
+scale = Vector2(0.353, 0.353)
+texture = ExtResource("1_jb4a4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(800, 449)
+shape = SubResource("RectangleShape2D_bjc8s")
+
+[node name="Retry" type="Area2D" parent="."]
+script = ExtResource("2_sf3kf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Retry"]
+position = Vector2(586, 648.5)
+shape = SubResource("RectangleShape2D_4w8qv")
+
+[node name="Quit" type="Area2D" parent="."]
+script = ExtResource("3_8r1yx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Quit"]
+position = Vector2(1016, 649)
+shape = SubResource("RectangleShape2D_ufr8h")
+
+[connection signal="input_event" from="Retry" to="Retry" method="_on_input_event"]
+[connection signal="input_event" from="Quit" to="Quit" method="_on_input_event"]

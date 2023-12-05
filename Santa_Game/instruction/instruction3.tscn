@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://daruyue0klwgt"]
+
+[ext_resource type="Texture2D" uid="uid://b51iwmtics255" path="res://Assets/stage2.png" id="1_7jdvg"]
+[ext_resource type="Script" path="res://instruction/ins3_main.gd" id="2_gfnc1"]
+[ext_resource type="Script" path="res://instruction/ins3_ins2.gd" id="3_j61px"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_elq25"]
+size = Vector2(1612, 908)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j5xe3"]
+size = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3hx26"]
+size = Vector2(56, 72)
+
+[node name="instruction3" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(799, 450)
+scale = Vector2(0.353, 0.354)
+texture = ExtResource("1_7jdvg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(802, 450)
+shape = SubResource("RectangleShape2D_elq25")
+
+[node name="ins3_main" type="Area2D" parent="."]
+script = ExtResource("2_gfnc1")
+
+[node name="ins3_main" type="CollisionShape2D" parent="ins3_main"]
+position = Vector2(1530, 70)
+shape = SubResource("RectangleShape2D_j5xe3")
+
+[node name="ins3_ins2" type="Area2D" parent="."]
+script = ExtResource("3_j61px")
+
+[node name="ins3_ins2" type="CollisionShape2D" parent="ins3_ins2"]
+position = Vector2(767, 776)
+shape = SubResource("RectangleShape2D_3hx26")
+
+[connection signal="input_event" from="ins3_main" to="ins3_main" method="_on_input_event"]
+[connection signal="input_event" from="ins3_ins2" to="ins3_ins2" method="_on_input_event"]
