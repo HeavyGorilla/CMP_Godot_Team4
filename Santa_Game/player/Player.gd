@@ -37,7 +37,7 @@ func _ready():
 func _physics_process(_delta):
 	$RudolfBar.value = Rudolf_get
 	$HealthBar.value = health
-	velocity = Input.get_vector("left", "right", "up", "down") * 150
+	velocity = Input.get_vector("left", "right", "up", "down") * 450
 	move_and_slide()
 
 	if !is_interacting_with_box:
