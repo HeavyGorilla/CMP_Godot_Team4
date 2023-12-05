@@ -28,7 +28,7 @@ func _ready():
 	animated_sprite.connect("animation_finished", Callable(self, "_on_AnimatedSprite2D_animation_finished"))
 
 func _physics_process(_delta):
-	velocity = Input.get_vector("left", "right", "up", "down") * 150
+	velocity = Input.get_vector("left", "right", "up", "down") * 400
 	move_and_slide()
 
 	if !is_interacting_with_gift:
@@ -56,7 +56,7 @@ func _physics_process(_delta):
 				animated_sprite.play("up_box")
 			elif Input.is_action_pressed("down"):
 				current_direction = Direction.DOWN
-				animated_sprite.play("down_box")
+				animated_sprite.play("down_walk")
 			elif Input.is_action_pressed("left"):
 				current_direction = Direction.LEFT
 				animated_sprite.flip_h = false
