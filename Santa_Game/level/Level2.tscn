@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://b3e4udemf7jow"]
+[gd_scene load_steps=19 format=3 uid="uid://b3e4udemf7jow"]
 
 [ext_resource type="Texture2D" uid="uid://b2ik7njwnesjd" path="res://tilemap_asset/16x16/Tilesets/Solaria Demo Update 01.png" id="1_doqah"]
 [ext_resource type="Texture2D" uid="uid://c4aqbth7m6l2p" path="res://tilemap_asset/16x16/kenney_tiny-ski/Tilemap/tilemap_packed.png" id="2_wgd84"]
@@ -6,7 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://do1525g3oroox" path="res://tilemap_asset/16x16/kenney_tiny-ski/Tilemap/summer_pine_tree_tiles.png" id="5_lyky6"]
 [ext_resource type="PackedScene" uid="uid://c6wlfn7b4siue" path="res://player/Player2.tscn" id="6_0lfwi"]
 [ext_resource type="Script" path="res://level/main2.gd" id="6_0w3yr"]
+[ext_resource type="PackedScene" uid="uid://dc7hpubkax2g0" path="res://player/Bullet.tscn" id="6_lgcn6"]
 [ext_resource type="Texture2D" uid="uid://m4m3npv05luf" path="res://Assets/crosshair.png" id="8_ptltf"]
+[ext_resource type="PackedScene" uid="uid://cx653js0ld08t" path="res://enemy_boss/boss.tscn" id="9_hgloh"]
+[ext_resource type="PackedScene" uid="uid://5okw42snj5wq" path="res://enemy_boss/boss_label_for_test.tscn" id="10_lj47f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cgfh5"]
 texture = ExtResource("1_doqah")
@@ -4453,6 +4456,14 @@ sources/6 = SubResource("TileSetAtlasSource_3hsbv")
 
 [node name="Level2" type="Node2D"]
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="boss_label_for_test" parent="CanvasLayer" instance=ExtResource("10_lj47f")]
+offset_left = 19.0
+offset_top = 17.0
+offset_right = 60.0
+offset_bottom = 43.0
+
 [node name="background" type="TileMap" parent="."]
 position = Vector2(-2050, -713.888)
 scale = Vector2(1.64308, 1.6116)
@@ -4470,10 +4481,19 @@ layer_0/tile_data = PackedInt32Array(786470, 655360, 7, 852006, 655360, 8, 91754
 [node name="main2" type="Node2D" parent="."]
 script = ExtResource("6_0w3yr")
 
-[node name="Player" parent="main2" instance=ExtResource("6_0lfwi")]
+[node name="Player" parent="main2" groups=["santa"] instance=ExtResource("6_0lfwi")]
 z_index = 1
-position = Vector2(-3, 2)
+position = Vector2(-923, 612)
 scale = Vector2(0.890835, 0.890835)
+ammo = ExtResource("6_lgcn6")
+
+[node name="TileMap" type="TileMap" parent="main2"]
+position = Vector2(-489, 430)
+scale = Vector2(3.68, 3.68)
+tile_set = SubResource("TileSet_8eeba")
+format = 2
+layer_0/z_index = 1
+layer_0/tile_data = PackedInt32Array(-720903, 1179653, 5, -655367, 1179653, 6, -589831, 1179653, 7, -720902, 1245189, 5, -655366, 1245189, 6, -589830, 1245189, 7, -524294, 1245189, 8, -720901, 1310725, 5, -655365, 1310725, 6, -589829, 1310725, 7, -524293, 1310725, 8, -720900, 1376261, 5, -655364, 1376261, 6, -589828, 1376261, 7, -3, 1179653, 5, 65533, 1179653, 6, 131069, 1179653, 7, -2, 1245189, 5, 65534, 1245189, 6, 131070, 1245189, 7, 196606, 1245189, 8, -1, 1310725, 5, 65535, 1310725, 6, 131071, 1310725, 7, 196607, 1310725, 8, -65536, 1376261, 5, 0, 1376261, 6, 65536, 1376261, 7, -393211, 1179653, 5, -327675, 1179653, 6, -262139, 1179653, 7, -393210, 1245189, 5, -327674, 1245189, 6, -262138, 1245189, 7, -196602, 1245189, 8, -393209, 1310725, 5, -327673, 1310725, 6, -262137, 1310725, 7, -196601, 1310725, 8, -393208, 1376261, 5, -327672, 1376261, 6, -262136, 1376261, 7)
 
 [node name="ZoomTimer" type="Timer" parent="main2"]
 
@@ -4483,10 +4503,5 @@ scale = Vector2(0.0800002, 0.0800002)
 [node name="Sprite2D" type="Sprite2D" parent="main2/Crosshair"]
 texture = ExtResource("8_ptltf")
 
-[node name="TileMap" type="TileMap" parent="."]
-position = Vector2(-489, 430)
-scale = Vector2(3.68, 3.68)
-tile_set = SubResource("TileSet_8eeba")
-format = 2
-layer_0/z_index = 1
-layer_0/tile_data = PackedInt32Array(-720903, 1179653, 5, -655367, 1179653, 6, -589831, 1179653, 7, -720902, 1245189, 5, -655366, 1245189, 6, -589830, 1245189, 7, -524294, 1245189, 8, -720901, 1310725, 5, -655365, 1310725, 6, -589829, 1310725, 7, -524293, 1310725, 8, -720900, 1376261, 5, -655364, 1376261, 6, -589828, 1376261, 7, -3, 1179653, 5, 65533, 1179653, 6, 131069, 1179653, 7, -2, 1245189, 5, 65534, 1245189, 6, 131070, 1245189, 7, 196606, 1245189, 8, -1, 1310725, 5, 65535, 1310725, 6, 131071, 1310725, 7, 196607, 1310725, 8, -65536, 1376261, 5, 0, 1376261, 6, 65536, 1376261, 7, -393211, 1179653, 5, -327675, 1179653, 6, -262139, 1179653, 7, -393210, 1245189, 5, -327674, 1245189, 6, -262138, 1245189, 7, -196602, 1245189, 8, -393209, 1310725, 5, -327673, 1310725, 6, -262137, 1310725, 7, -196601, 1310725, 8, -393208, 1376261, 5, -327672, 1376261, 6, -262136, 1376261, 7)
+[node name="boss" parent="." groups=["boss"] instance=ExtResource("9_hgloh")]
+position = Vector2(-55, -128)

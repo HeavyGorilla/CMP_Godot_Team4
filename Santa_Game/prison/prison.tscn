@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7nmny"]
 size = Vector2(93.0238, 100.19)
 
-[node name="Prison" type="Area2D"]
+[node name="Prison" type="Area2D" groups=["prison"]]
 collision_layer = 4
 script = ExtResource("1_a1rfr")
 
@@ -20,3 +20,4 @@ scale = Vector2(1.68, 1.68)
 shape = SubResource("RectangleShape2D_7nmny")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
