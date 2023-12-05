@@ -4477,7 +4477,7 @@ layer_0/tile_data = PackedInt32Array(786470, 655360, 7, 852006, 655360, 8, 91754
 [node name="main2" type="Node2D" parent="."]
 script = ExtResource("6_0w3yr")
 
-[node name="Player" parent="main2" groups=["santa"] instance=ExtResource("6_0lfwi")]
+[node name="Player" parent="main2" groups=["player"] instance=ExtResource("6_0lfwi")]
 z_index = 1
 position = Vector2(-923, 612)
 scale = Vector2(0.890835, 0.890835)
@@ -4507,7 +4507,7 @@ position = Vector2(1024, 105)
 collision_layer = 512
 collision_mask = 3
 
-[node name="player_for_test" parent="test_boss2" groups=["player", "santa"] instance=ExtResource("10_p21yw")]
+[node name="player_for_test" parent="test_boss2" groups=["player"] instance=ExtResource("10_p21yw")]
 position = Vector2(131, 539)
 
 [node name="player_label_for_test" parent="test_boss2" instance=ExtResource("11_i6lrl")]
