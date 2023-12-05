@@ -18,9 +18,11 @@ offset_left = 35.0
 offset_top = 31.0
 offset_right = 93.0
 offset_bottom = 57.0
+metadata/_edit_use_anchors_ = true
 
 [node name="boss_label_for_test" parent="." instance=ExtResource("4_3hidu")]
 offset_left = 1015.0
 offset_top = 35.0
 offset_right = 1056.0
 offset_bottom = 61.0
+metadata/_edit_use_anchors_ = true

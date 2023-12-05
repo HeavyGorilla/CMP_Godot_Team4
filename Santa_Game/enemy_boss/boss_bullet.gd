@@ -19,7 +19,7 @@ func _process(delta):
 		position += direction * speed * delta
 
 func _on_body_entered(body):
-	if body.is_in_group("santa"):
+	if body.is_in_group("player"):
 		# 플레이어와 충돌 시 처리
 		# 데미지 처리 등
 		print(body.name)
