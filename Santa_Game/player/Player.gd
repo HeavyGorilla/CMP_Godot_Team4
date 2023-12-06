@@ -31,7 +31,6 @@ var energy_per_Rudolf = 33
 var health = 100
 
 func _ready():
-	enemy = get_parent().get_node("enemy")
 	animated_sprite.connect("animation_finished", Callable(self, "_on_AnimatedSprite2D_animation_finished"))
 
 func _physics_process(_delta):

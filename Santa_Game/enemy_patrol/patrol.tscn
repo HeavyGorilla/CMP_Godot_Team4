@@ -1,6 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bqnj70b5dui6m"]
 
-[ext_resource type="Texture2D" uid="uid://djy3hlusu1p15" path="res://icon.svg" id="1_or4yh"]
+[ext_resource type="Texture2D" uid="uid://dqknfqihap5j5" path="res://icon.svg" id="1_or4yh"]
+
 [ext_resource type="Script" path="res://enemy_patrol/patrol.gd" id="1_tcpge"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gq1sf"]
