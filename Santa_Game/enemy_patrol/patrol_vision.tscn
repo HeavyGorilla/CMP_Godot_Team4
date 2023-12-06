@@ -1,19 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://diklfqrmaemno"]
+[gd_scene load_steps=3 format=3 uid="uid://diklfqrmaemno"]
 
 [ext_resource type="Script" path="res://enemy_patrol/patrol_vision.gd" id="1_fsafy"]
+[ext_resource type="Texture2D" uid="uid://dlycqtup54wct" path="res://enemy_patrol/view_image_test_v2.png" id="2_j7fa5"]
 
 [node name="patrol_vision" type="Area2D"]
 script = ExtResource("1_fsafy")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-rotation = -0.453475
-polygon = PackedVector2Array(0, 0, 656, 646, 788, 593, 851, 485, 910, 368, 962, 266, 940, 118)
+position = Vector2(0, -4.65462)
+scale = Vector2(1, 0.884868)
+polygon = PackedVector2Array(2.99994, 5.26019, 4, 6.39035, 730, 197.379, 732, -185.729)
 
-[node name="place_circular_sector_image" type="Sprite2D" parent="."]
-rotation = -0.451265
-
-[node name="Polygon2D" type="Polygon2D" parent="place_circular_sector_image"]
-color = Color(1, 1, 0.156863, 0.2)
-polygon = PackedVector2Array(-4, 1, 939, 116, 963, 266, 791, 591, 655, 644)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(365.25, 3.8147e-06)
+scale = Vector2(1.10061, 0.625)
+texture = ExtResource("2_j7fa5")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
