@@ -1,12 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://bqnj70b5dui6m"]
 
-[ext_resource type="Texture2D" uid="uid://djy3hlusu1p15" path="res://icon.svg" id="1_or4yh"]
+[ext_resource type="Texture2D" uid="uid://ipmll4oju1l2" path="res://icon.svg" id="1_or4yh"]
 [ext_resource type="Script" path="res://enemy_patrol/patrol.gd" id="1_tcpge"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gq1sf"]
 size = Vector2(130, 132)
 
 [node name="patrol" type="CharacterBody2D"]
+collision_layer = 512
+collision_mask = 1023
 script = ExtResource("1_tcpge")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -17,5 +19,5 @@ texture = ExtResource("1_or4yh")
 shape = SubResource("RectangleShape2D_gq1sf")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-rotation = -0.00162158
 target_position = Vector2(0, 0)
+collision_mask = 511

@@ -1,9 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://diklfqrmaemno"]
 
 [ext_resource type="Script" path="res://enemy_patrol/patrol_vision.gd" id="1_fsafy"]
-[ext_resource type="Texture2D" uid="uid://dlycqtup54wct" path="res://enemy_patrol/view_image_test_v2.png" id="2_j7fa5"]
+[ext_resource type="Texture2D" uid="uid://cyvwf2b8krwgi" path="res://enemy_patrol/view_image_test_v2.png" id="2_j7fa5"]
 
 [node name="patrol_vision" type="Area2D"]
+collision_layer = 512
+collision_mask = 1023
 script = ExtResource("1_fsafy")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
