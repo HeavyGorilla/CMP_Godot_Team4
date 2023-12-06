@@ -104,8 +104,8 @@ func get_player_position() -> Vector2:
 
 # Damage Logic
 func take_damage(damage_amount):
-	health -= damage_amount
-	if health <= 0:
+	HP -= damage_amount
+	if HP <= 0:
 		die()
 
 func die():
