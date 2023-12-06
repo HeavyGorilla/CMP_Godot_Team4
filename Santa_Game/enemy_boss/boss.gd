@@ -95,7 +95,7 @@ func pattern_circle():
 #			bullet.set_direction(direction)  # 이동 방향 설정
 
 func get_player_position() -> Vector2:
-	var player = get_node_or_null("../player_for_test")	# 플레이어 노드 경로
+	var player = $"../../main2/Player"
 	if player:
 		return player.global_position
 	else:
