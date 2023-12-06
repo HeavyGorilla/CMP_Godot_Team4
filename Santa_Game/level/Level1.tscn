@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://coq7wsmxvqnl4"]
+[gd_scene load_steps=42 format=3 uid="uid://coq7wsmxvqnl4"]
 
 [ext_resource type="Texture2D" uid="uid://b2ik7njwnesjd" path="res://tilemap_asset/16x16/Tilesets/Solaria Demo Update 01.png" id="1_mvqd5"]
 [ext_resource type="Texture2D" uid="uid://c4aqbth7m6l2p" path="res://tilemap_asset/16x16/kenney_tiny-ski/Tilemap/tilemap_packed.png" id="2_0w0rv"]
@@ -26,7 +26,9 @@
 [ext_resource type="PackedScene" uid="uid://cq5qxlddn65cg" path="res://gift/giftB2.tscn" id="20_g1rof"]
 [ext_resource type="PackedScene" uid="uid://8hn8ur8b1381" path="res://gift/giftB3.tscn" id="21_a5urq"]
 [ext_resource type="PackedScene" uid="uid://kyi7t88opsbw" path="res://player/Player1.tscn" id="26_4e378"]
-[ext_resource type="PackedScene" uid="uid://bqnj70b5dui6m" path="res://enemy_patrol/patrol.tscn" id="27_5qvfd"]
+[ext_resource type="PackedScene" uid="uid://bqnj70b5dui6m" path="res://enemy_patrol/patrol1.tscn" id="27_6dtuc"]
+[ext_resource type="PackedScene" uid="uid://dno3uobook8d6" path="res://enemy_patrol/patrol2.tscn" id="28_c1j72"]
+[ext_resource type="PackedScene" uid="uid://wox1mtjb704v" path="res://enemy_patrol/patrol3.tscn" id="29_syki0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cgfh5"]
 texture = ExtResource("1_mvqd5")
@@ -2953,62 +2955,169 @@ shape = SubResource("RectangleShape2D_kufty")
 
 [node name="Player1" parent="." groups=["santa"] instance=ExtResource("26_4e378")]
 z_index = 2
-position = Vector2(-3018.06, -3615.28)
+position = Vector2(1401.39, 606.944)
 rotation = -0.00569615
 scale = Vector2(1.16699, 1.16699)
 
-[node name="patrol1" parent="." instance=ExtResource("27_5qvfd")]
-position = Vector2(-3287.5, -3859.72)
+[node name="patrol1" parent="." instance=ExtResource("27_6dtuc")]
+position = Vector2(-3291.67, -3863.89)
 
 [node name="path1" type="Node2D" parent="."]
 
 [node name="Marker2D1" type="Marker2D" parent="path1"]
 position = Vector2(-2787.5, -3858.33)
-scale = Vector2(1, 1)
 
 [node name="Marker2D2" type="Marker2D" parent="path1"]
 position = Vector2(-2762.5, -3326.39)
-scale = Vector2(1, 1)
 
 [node name="Marker2D3" type="Marker2D" parent="path1"]
 position = Vector2(-3316.67, -3313.89)
-scale = Vector2(1, 1)
 
 [node name="Marker2D4" type="Marker2D" parent="path1"]
 position = Vector2(-3301.39, -2205.56)
-scale = Vector2(1, 1)
 
 [node name="Marker2D5" type="Marker2D" parent="path1"]
 position = Vector2(-1780.56, -2216.67)
-scale = Vector2(1, 1)
 
 [node name="Marker2D6" type="Marker2D" parent="path1"]
 position = Vector2(-1781.94, -2263.89)
-scale = Vector2(1, 1)
 
 [node name="Marker2D7" type="Marker2D" parent="path1"]
 position = Vector2(-3250, -2258.33)
-scale = Vector2(1, 1)
 
 [node name="Marker2D8" type="Marker2D" parent="path1"]
 position = Vector2(-3276.39, -3268.06)
-scale = Vector2(1, 1)
 
 [node name="Marker2D9" type="Marker2D" parent="path1"]
 position = Vector2(-2720.83, -3284.72)
-scale = Vector2(1, 1)
 
 [node name="Marker2D10" type="Marker2D" parent="path1"]
 position = Vector2(-2737.5, -3808.33)
-scale = Vector2(1, 1)
 
 [node name="Marker2D11" type="Marker2D" parent="path1"]
 position = Vector2(-3312.5, -3783.33)
-scale = Vector2(1, 1)
 
 [node name="Marker2D12" type="Marker2D" parent="path1"]
 position = Vector2(-3288.89, -3858.33)
+
+[node name="patrol2" parent="." instance=ExtResource("28_c1j72")]
+position = Vector2(1748.61, -2826.39)
+
+[node name="path2" type="Node2D" parent="."]
+
+[node name="Marker2D1" type="Marker2D" parent="path2"]
+position = Vector2(-322.222, -2231.94)
+
+[node name="Marker2D2" type="Marker2D" parent="path2"]
+position = Vector2(-1270.83, -2225)
+
+[node name="Marker2D3" type="Marker2D" parent="path2"]
+position = Vector2(-1288.89, -3231.95)
+
+[node name="Marker2D4" type="Marker2D" parent="path2"]
+position = Vector2(-859.722, -3226.39)
+
+[node name="Marker2D5" type="Marker2D" parent="path2"]
+position = Vector2(-841.667, -3731.94)
+
+[node name="Marker2D6" type="Marker2D" parent="path2"]
+position = Vector2(218.056, -3702.78)
+
+[node name="Marker2D7" type="Marker2D" parent="path2"]
+position = Vector2(218.055, -2372.22)
+
+[node name="Marker2D8" type="Marker2D" parent="path2"]
+position = Vector2(1854.17, -2243.06)
+
+[node name="Marker2D9" type="Marker2D" parent="path2"]
+position = Vector2(1819.44, -1325)
+
+[node name="Marker2D10" type="Marker2D" parent="path2"]
+position = Vector2(218.055, -1295.83)
+
+[node name="Marker2D11" type="Marker2D" parent="path2"]
+position = Vector2(206.944, -895.833)
+
+[node name="Marker2D12" type="Marker2D" parent="path2"]
+position = Vector2(895.833, -877.778)
+
+[node name="Marker2D13" type="Marker2D" parent="path2"]
+position = Vector2(1001.39, -748.611)
+
+[node name="Marker2D14" type="Marker2D" parent="path2"]
+position = Vector2(254.167, -777.778)
+
+[node name="Marker2D15" type="Marker2D" parent="path2"]
+position = Vector2(248.611, -1390.28)
+
+[node name="Marker2D16" type="Marker2D" parent="path2"]
+position = Vector2(1811.11, -1427.78)
+
+[node name="Marker2D17" type="Marker2D" parent="path2"]
+position = Vector2(1811.11, -2194.44)
+
+[node name="Marker2D18" type="Marker2D" parent="path2"]
+position = Vector2(231.944, -2302.78)
+
+[node name="Marker2D19" type="Marker2D" parent="path2"]
+position = Vector2(150, -3611.11)
+
+[node name="Marker2D20" type="Marker2D" parent="path2"]
+position = Vector2(-798.611, -3663.89)
+
+[node name="Marker2D21" type="Marker2D" parent="path2"]
+position = Vector2(-856.944, -3144.44)
+
+[node name="Marker2D22" type="Marker2D" parent="path2"]
+position = Vector2(-1302.78, -3159.72)
+
+[node name="Marker2D23" type="Marker2D" parent="path2"]
+position = Vector2(-1334.72, -2226.39)
+
+[node name="Marker2D24" type="Marker2D" parent="path2"]
+position = Vector2(-270.833, -2241.67)
+
+[node name="patrol3" parent="." instance=ExtResource("29_syki0")]
+position = Vector2(218.056, 523.611)
 scale = Vector2(1, 1)
+
+[node name="path3" type="Node2D" parent="."]
+
+[node name="Marker2D1" type="Marker2D" parent="path3"]
+position = Vector2(255.556, 559.722)
+
+[node name="Marker2D2" type="Marker2D" parent="path3"]
+position = Vector2(-1779.17, 556.944)
+
+[node name="Marker2D3" type="Marker2D" parent="path3"]
+position = Vector2(-1809.72, -518.056)
+
+[node name="Marker2D4" type="Marker2D" parent="path3"]
+position = Vector2(-2351.39, -512.5)
+
+[node name="Marker2D5" type="Marker2D" parent="path3"]
+position = Vector2(-2365.28, 36.1113)
+
+[node name="Marker2D6" type="Marker2D" parent="path3"]
+position = Vector2(-3306.94, 48.6113)
+
+[node name="Marker2D7" type="Marker2D" parent="path3"]
+position = Vector2(-3300, -11.1108)
+
+[node name="Marker2D8" type="Marker2D" parent="path3"]
+position = Vector2(-2226.39, 6.94434)
+
+[node name="Marker2D9" type="Marker2D" parent="path3"]
+position = Vector2(-2244.44, -458.333)
+
+[node name="Marker2D10" type="Marker2D" parent="path3"]
+position = Vector2(-1752.78, -437.5)
+
+[node name="Marker2D11" type="Marker2D" parent="path3"]
+position = Vector2(-1723.61, 461.111)
+
+[node name="Marker2D12" type="Marker2D" parent="path3"]
+position = Vector2(262.5, 476.389)
 
 [connection signal="complete_giftA" from="CanvasLayer/giftAPointLabel" to="Player1" method="_on_gift_a_point_label_complete_gift_a"]
 [connection signal="complete_giftB" from="CanvasLayer/giftBPointLabel" to="Player1" method="_on_gift_b_point_label_complete_gift_b"]
