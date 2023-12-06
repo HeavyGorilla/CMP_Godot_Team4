@@ -2953,14 +2953,62 @@ shape = SubResource("RectangleShape2D_kufty")
 
 [node name="Player1" parent="." groups=["santa"] instance=ExtResource("26_4e378")]
 z_index = 2
-position = Vector2(1723.61, 1016.67)
+position = Vector2(-3018.06, -3615.28)
 rotation = -0.00569615
 scale = Vector2(1.16699, 1.16699)
 
-[node name="patrol" parent="." instance=ExtResource("27_5qvfd")]
-position = Vector2(848.611, -37.5)
-collision_layer = 512
-collision_mask = 1023
+[node name="patrol1" parent="." instance=ExtResource("27_5qvfd")]
+position = Vector2(-3287.5, -3859.72)
+
+[node name="path1" type="Node2D" parent="."]
+
+[node name="Marker2D1" type="Marker2D" parent="path1"]
+position = Vector2(-2787.5, -3858.33)
+scale = Vector2(1, 1)
+
+[node name="Marker2D2" type="Marker2D" parent="path1"]
+position = Vector2(-2762.5, -3326.39)
+scale = Vector2(1, 1)
+
+[node name="Marker2D3" type="Marker2D" parent="path1"]
+position = Vector2(-3316.67, -3313.89)
+scale = Vector2(1, 1)
+
+[node name="Marker2D4" type="Marker2D" parent="path1"]
+position = Vector2(-3301.39, -2205.56)
+scale = Vector2(1, 1)
+
+[node name="Marker2D5" type="Marker2D" parent="path1"]
+position = Vector2(-1780.56, -2216.67)
+scale = Vector2(1, 1)
+
+[node name="Marker2D6" type="Marker2D" parent="path1"]
+position = Vector2(-1781.94, -2263.89)
+scale = Vector2(1, 1)
+
+[node name="Marker2D7" type="Marker2D" parent="path1"]
+position = Vector2(-3250, -2258.33)
+scale = Vector2(1, 1)
+
+[node name="Marker2D8" type="Marker2D" parent="path1"]
+position = Vector2(-3276.39, -3268.06)
+scale = Vector2(1, 1)
+
+[node name="Marker2D9" type="Marker2D" parent="path1"]
+position = Vector2(-2720.83, -3284.72)
+scale = Vector2(1, 1)
+
+[node name="Marker2D10" type="Marker2D" parent="path1"]
+position = Vector2(-2737.5, -3808.33)
+scale = Vector2(1, 1)
+
+[node name="Marker2D11" type="Marker2D" parent="path1"]
+position = Vector2(-3312.5, -3783.33)
+scale = Vector2(1, 1)
+
+[node name="Marker2D12" type="Marker2D" parent="path1"]
+position = Vector2(-3288.89, -3858.33)
+scale = Vector2(1, 1)
 
 [connection signal="complete_giftA" from="CanvasLayer/giftAPointLabel" to="Player1" method="_on_gift_a_point_label_complete_gift_a"]
 [connection signal="complete_giftB" from="CanvasLayer/giftBPointLabel" to="Player1" method="_on_gift_b_point_label_complete_gift_b"]
@@ -2981,11 +3029,11 @@ collision_mask = 1023
 [connection signal="body_entered" from="GiftBBox" to="Gifts/GiftB1" method="_on_gift_b_box_body_entered"]
 [connection signal="body_entered" from="GiftBBox" to="Gifts/GiftB2" method="_on_gift_b_box_body_entered"]
 [connection signal="body_entered" from="GiftBBox" to="Gifts/GiftB3" method="_on_gift_b_box_body_entered"]
-[connection signal="body_entered" from="GiftCBox" to="Gifts/GiftC1" method="_on_red_box_body_entered"]
 [connection signal="body_entered" from="GiftCBox" to="Gifts/GiftC1" method="_on_gift_c_box_body_entered"]
-[connection signal="body_entered" from="GiftCBox" to="Gifts/GiftC2" method="_on_red_box_body_entered"]
+[connection signal="body_entered" from="GiftCBox" to="Gifts/GiftC1" method="_on_red_box_body_entered"]
 [connection signal="body_entered" from="GiftCBox" to="Gifts/GiftC2" method="_on_gift_c_box_body_entered"]
-[connection signal="body_entered" from="GiftCBox" to="Gifts/GiftC3" method="_on_red_box_body_entered"]
+[connection signal="body_entered" from="GiftCBox" to="Gifts/GiftC2" method="_on_red_box_body_entered"]
 [connection signal="body_entered" from="GiftCBox" to="Gifts/GiftC3" method="_on_gift_c_box_body_entered"]
+[connection signal="body_entered" from="GiftCBox" to="Gifts/GiftC3" method="_on_red_box_body_entered"]
 [connection signal="body_entered" from="FinishArea" to="Player1" method="_on_finish_area_body_entered"]
 [connection signal="rudolph_rescued" from="Player1" to="CanvasLayer/rudolphPointLabel" method="_on_player_1_rudolph_rescued"]
