@@ -28,7 +28,7 @@ func _ready():
 	animated_sprite.connect("animation_finished", Callable(self, "_on_AnimatedSprite2D_animation_finished"))
 
 func _physics_process(_delta):
-	velocity = Input.get_vector("left", "right", "up", "down") * 400
+	velocity = Input.get_vector("left", "right", "up", "down") * 300
 	move_and_slide()
 
 	if !is_interacting_with_gift:
@@ -90,7 +90,7 @@ func _on_gift_c_point_label_complete_gift_c():
 
 func _on_finish_area_body_entered(body):
 	if body is santa && giftpoints>=3:
-		get_tree().change_scene_to_file("res://level/Level2.tscn")
+		get_tree().change_scene_to_file("res://Game/stage1clear.tscn")
 
 #func _on_area_2d_area_entered(area):
 #	if body.is_in_group("gift"):
