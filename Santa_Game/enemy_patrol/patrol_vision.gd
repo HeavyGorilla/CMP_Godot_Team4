@@ -1,7 +1,7 @@
 extends Area2D
 
 @onready var ray_cast = $"../RayCast2D"
-var vision_distance = 750
+var vision_distance = 950
 
 func _ready():
 	ray_cast.enabled = true

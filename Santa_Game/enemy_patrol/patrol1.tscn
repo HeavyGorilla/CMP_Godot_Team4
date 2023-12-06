@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqnj70b5dui6m"]
+
+[ext_resource type="Script" path="res://enemy_patrol/patrol1.gd" id="1_3pwku"]
+[ext_resource type="Texture2D" uid="uid://ipmll4oju1l2" path="res://icon.svg" id="2_pd28x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gq1sf"]
+size = Vector2(130, 132)
+
+[node name="patrol1" type="CharacterBody2D"]
+collision_layer = 512
+collision_mask = 1023
+script = ExtResource("1_3pwku")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 1, 1)
+texture = ExtResource("2_pd28x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_gq1sf")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, 0)
+collision_mask = 511
