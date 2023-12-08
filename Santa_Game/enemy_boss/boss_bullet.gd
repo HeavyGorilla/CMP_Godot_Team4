@@ -25,3 +25,5 @@ func _on_body_entered(body):
 		print(body.name)
 		body.take_damage(damage)
 		queue_free()
+	else:
+		queue_free()
