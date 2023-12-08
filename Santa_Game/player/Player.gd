@@ -36,6 +36,7 @@ func _ready():
 func _physics_process(_delta):
 	$RudolfBar.value = Rudolf_get
 	$HealthBar.value = health
+
 	velocity = Input.get_vector("left", "right", "up", "down") * 450
 	move_and_slide()
 
@@ -141,3 +142,7 @@ func _on_AnimatedSprite2D_animation_finished():  # New function to handle the si
 
 func _on_reload_timer_timeout():
 	can_shoot = true
+
+func take_damage(damage):
+	health -= damage
+	
