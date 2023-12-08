@@ -2,9 +2,10 @@ extends Label
 
 var giftCPoints = 0
 signal complete_giftC
+signal giftCpointUp
 
 func _ready():
-	text = "GiftC Points: "+str(giftCPoints)+"/3"
+	text = "GiftC Points: "+str(3-giftCPoints)
 	
 	if giftCPoints >= 3:
 		print("giftC 완료")
@@ -12,12 +13,15 @@ func _ready():
 
 func _on_gift_c_1_gift_c_collected():
 	giftCPoints = giftCPoints + 1
+	emit_signal("giftCpointUp")
 	_ready()
 
 func _on_gift_c_2_gift_c_collected():
 	giftCPoints = giftCPoints + 1
+	emit_signal("giftCpointUp")
 	_ready()
 
 func _on_gift_c_3_gift_c_collected():
 	giftCPoints = giftCPoints + 1
+	emit_signal("giftCpointUp")
 	_ready()
