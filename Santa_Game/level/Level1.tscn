@@ -1195,7 +1195,7 @@ texture = ExtResource("2_0w0rv")
 0:1/0 = 0
 0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:1/0/physics_layer_0/angular_velocity = 0.0
-0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-0.375, 8, -0.125, 1.5, 8, -8, -8, -8, -8, 8)
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(3, 8, 8, 0.875, 8, -8, -8, -8, -8, 8)
 1:1/0 = 0
 1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:1/0/physics_layer_0/angular_velocity = 0.0
@@ -1213,7 +1213,7 @@ texture = ExtResource("2_0w0rv")
 5:1/0 = 0
 5:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 5:1/0/physics_layer_0/angular_velocity = 0.0
-5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 0, 1.375, 0, 8, 8, 8, 8, -8)
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 1.75, -3.875, 8, 8, 8, 8, -8)
 6:1/0 = 0
 6:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 6:1/0/physics_layer_0/angular_velocity = 0.0
@@ -1235,7 +1235,7 @@ texture = ExtResource("2_0w0rv")
 0:2/0 = 0
 0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:2/0/physics_layer_0/angular_velocity = 0.0
-0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 0.25, -8, 1.125, 0.125, 8, 8, -8, 8)
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 3, -8, 8, -1.625, 8, 8, -8, 8)
 1:2/0 = 0
 1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:2/0/physics_layer_0/angular_velocity = 0.0
@@ -1251,7 +1251,7 @@ texture = ExtResource("2_0w0rv")
 5:2/0 = 0
 5:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 5:2/0/physics_layer_0/angular_velocity = 0.0
-5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, -0.25, -0.125, 0, -8, 8, -8, 8, 8)
+5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, -8, -1.25, -2.375, -8, 8, -8, 8, 8)
 6:2/0 = 0
 6:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 6:2/0/physics_layer_0/angular_velocity = 0.0
@@ -2792,12 +2792,12 @@ script = ExtResource("8_2vkl5")
 [node name="Gifts" type="Node" parent="."]
 
 [node name="GiftA1" parent="Gifts" groups=["gift"] instance=ExtResource("14_auglw")]
-position = Vector2(1341, 4164)
+position = Vector2(1341, 4214)
 mass = 5.0
 linear_damp = 5.0
 
 [node name="GiftA2" parent="Gifts" groups=["gift"] instance=ExtResource("16_4fd2r")]
-position = Vector2(1340, 4079)
+position = Vector2(1340, 4102)
 mass = 5.0
 linear_damp = 5.0
 
