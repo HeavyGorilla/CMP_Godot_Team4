@@ -1,14 +1,15 @@
-[gd_scene load_steps=42 format=3 uid="uid://coq7wsmxvqnl4"]
+[gd_scene load_steps=43 format=3 uid="uid://coq7wsmxvqnl4"]
 
 [ext_resource type="Texture2D" uid="uid://b2ik7njwnesjd" path="res://tilemap_asset/16x16/Tilesets/Solaria Demo Update 01.png" id="1_mvqd5"]
 [ext_resource type="Texture2D" uid="uid://c4aqbth7m6l2p" path="res://tilemap_asset/16x16/kenney_tiny-ski/Tilemap/tilemap_packed.png" id="2_0w0rv"]
 [ext_resource type="Texture2D" uid="uid://cvn4u8shjigal" path="res://tilemap_asset/16x16/kenney_tiny-battle/Tilemap/tilemap_packed.png" id="3_53xq8"]
 [ext_resource type="Script" path="res://label/giftAPointLabel.gd" id="3_cvem1"]
 [ext_resource type="Script" path="res://label/giftBPointLabel.gd" id="4_ojdoh"]
+[ext_resource type="FontFile" uid="uid://b4kp287dkplub" path="res://Assets/DungGeunMo.otf" id="4_w52rw"]
 [ext_resource type="Script" path="res://label/giftCPointLabel.gd" id="6_4ao6h"]
-[ext_resource type="Script" path="res://label/rudolphPointLabel.gd" id="6_es2kw"]
 [ext_resource type="Texture2D" uid="uid://4t0o72b3l23t" path="res://image/deer.png" id="6_rnri0"]
 [ext_resource type="PackedScene" uid="uid://c448hd5e21k6c" path="res://prison/prison.tscn" id="7_m0rf1"]
+[ext_resource type="Script" path="res://label/PointLabel.gd" id="8_2vkl5"]
 [ext_resource type="Texture2D" uid="uid://bnpk074oe2vy0" path="res://image/yellowbox.png" id="9_21vf0"]
 [ext_resource type="PackedScene" uid="uid://drt65dvrqucg2" path="res://gift/giftC1.tscn" id="9_ehcnq"]
 [ext_resource type="Texture2D" uid="uid://ba0q07sxspbsj" path="res://image/greenbox.png" id="10_1dusf"]
@@ -2754,6 +2755,7 @@ offset_top = 53.0
 offset_right = 200.0
 offset_bottom = 111.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_w52rw")
 theme_override_font_sizes/font_size = 40
 script = ExtResource("3_cvem1")
 
@@ -2763,6 +2765,7 @@ offset_top = 101.0
 offset_right = 246.0
 offset_bottom = 159.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_w52rw")
 theme_override_font_sizes/font_size = 40
 script = ExtResource("4_ojdoh")
 
@@ -2772,17 +2775,19 @@ offset_top = 149.0
 offset_right = 193.0
 offset_bottom = 207.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_w52rw")
 theme_override_font_sizes/font_size = 40
 script = ExtResource("6_4ao6h")
 
-[node name="rudolphPointLabel" type="Label" parent="CanvasLayer"]
+[node name="PointLabel" type="Label" parent="CanvasLayer"]
 offset_left = 59.0
 offset_top = 197.0
 offset_right = 193.0
 offset_bottom = 255.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_w52rw")
 theme_override_font_sizes/font_size = 40
-script = ExtResource("6_es2kw")
+script = ExtResource("8_2vkl5")
 
 [node name="Gifts" type="Node" parent="."]
 
@@ -3079,7 +3084,6 @@ position = Vector2(-270.833, -2241.67)
 
 [node name="patrol3" parent="." instance=ExtResource("29_syki0")]
 position = Vector2(218.056, 523.611)
-scale = Vector2(1, 1)
 
 [node name="path3" type="Node2D" parent="."]
 
@@ -3120,8 +3124,11 @@ position = Vector2(-1723.61, 461.111)
 position = Vector2(262.5, 476.389)
 
 [connection signal="complete_giftA" from="CanvasLayer/giftAPointLabel" to="Player1" method="_on_gift_a_point_label_complete_gift_a"]
+[connection signal="giftApointUp" from="CanvasLayer/giftAPointLabel" to="CanvasLayer/PointLabel" method="_on_gift_a_point_label_gift_apoint_up"]
 [connection signal="complete_giftB" from="CanvasLayer/giftBPointLabel" to="Player1" method="_on_gift_b_point_label_complete_gift_b"]
+[connection signal="giftBpointUp" from="CanvasLayer/giftBPointLabel" to="CanvasLayer/PointLabel" method="_on_gift_b_point_label_gift_bpoint_up"]
 [connection signal="complete_giftC" from="CanvasLayer/giftCPointLabel" to="Player1" method="_on_gift_c_point_label_complete_gift_c"]
+[connection signal="giftCpointUp" from="CanvasLayer/giftCPointLabel" to="CanvasLayer/PointLabel" method="_on_gift_c_point_label_gift_cpoint_up"]
 [connection signal="body_entered" from="Gifts/GiftA1" to="Player1" method="_on_gift_a_1_body_entered"]
 [connection signal="giftA_collected" from="Gifts/GiftA1" to="CanvasLayer/giftAPointLabel" method="_on_gift_a_1_gift_a_collected"]
 [connection signal="giftA_collected" from="Gifts/GiftA2" to="CanvasLayer/giftAPointLabel" method="_on_gift_a_2_gift_a_collected"]
@@ -3145,4 +3152,4 @@ position = Vector2(262.5, 476.389)
 [connection signal="body_entered" from="GiftCBox" to="Gifts/GiftC3" method="_on_gift_c_box_body_entered"]
 [connection signal="body_entered" from="GiftCBox" to="Gifts/GiftC3" method="_on_red_box_body_entered"]
 [connection signal="body_entered" from="FinishArea" to="Player1" method="_on_finish_area_body_entered"]
-[connection signal="rudolph_rescued" from="Player1" to="CanvasLayer/rudolphPointLabel" method="_on_player_1_rudolph_rescued"]
+[connection signal="rudolph_rescued" from="Player1" to="CanvasLayer/PointLabel" method="_on_player_1_rudolph_rescued"]

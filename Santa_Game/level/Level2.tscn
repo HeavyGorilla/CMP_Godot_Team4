@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://b3e4udemf7jow"]
+[gd_scene load_steps=21 format=3 uid="uid://b3e4udemf7jow"]
 
 [ext_resource type="Texture2D" uid="uid://b2ik7njwnesjd" path="res://tilemap_asset/16x16/Tilesets/Solaria Demo Update 01.png" id="1_doqah"]
 [ext_resource type="Texture2D" uid="uid://c4aqbth7m6l2p" path="res://tilemap_asset/16x16/kenney_tiny-ski/Tilemap/tilemap_packed.png" id="2_wgd84"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cx653js0ld08t" path="res://enemy_boss/boss.tscn" id="9_hgloh"]
 [ext_resource type="PackedScene" uid="uid://5okw42snj5wq" path="res://enemy_boss/boss_label_for_test.tscn" id="10_lj47f"]
 [ext_resource type="PackedScene" uid="uid://dyudljedop6i7" path="res://player_for_test/player_label_for_test.tscn" id="11_i6lrl"]
+[ext_resource type="FontFile" uid="uid://b4kp287dkplub" path="res://Assets/DungGeunMo.otf" id="11_qffbc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cgfh5"]
 texture = ExtResource("1_doqah")
@@ -4459,6 +4460,22 @@ sources/6 = SubResource("TileSetAtlasSource_3hsbv")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="player_label_for_test" parent="CanvasLayer" instance=ExtResource("11_i6lrl")]
+offset_left = 55.0
+offset_top = 60.0
+offset_right = 113.0
+offset_bottom = 86.0
+theme_override_fonts/font = ExtResource("11_qffbc")
+metadata/_edit_use_anchors_ = true
+
+[node name="boss_label_for_test" parent="CanvasLayer" instance=ExtResource("10_lj47f")]
+offset_left = 1035.0
+offset_top = 64.0
+offset_right = 1076.0
+offset_bottom = 90.0
+theme_override_fonts/font = ExtResource("11_qffbc")
+metadata/_edit_use_anchors_ = true
+
 [node name="background" type="TileMap" parent="."]
 position = Vector2(-2050, -713.888)
 scale = Vector2(1.64308, 1.6116)
@@ -4505,17 +4522,3 @@ position = Vector2(-1080, -240)
 position = Vector2(1024, 105)
 collision_layer = 512
 collision_mask = 3
-
-[node name="player_label_for_test" parent="test_boss2" instance=ExtResource("11_i6lrl")]
-offset_left = 35.0
-offset_top = 31.0
-offset_right = 93.0
-offset_bottom = 57.0
-metadata/_edit_use_anchors_ = true
-
-[node name="boss_label_for_test" parent="test_boss2" instance=ExtResource("10_lj47f")]
-offset_left = 1015.0
-offset_top = 35.0
-offset_right = 1056.0
-offset_bottom = 61.0
-metadata/_edit_use_anchors_ = true
