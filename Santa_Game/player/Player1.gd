@@ -29,6 +29,7 @@ func _ready():
 
 func _physics_process(_delta):
 	velocity = Input.get_vector("left", "right", "up", "down") * 300
+	position.x += randi_range(-0.1, 0.1)
 	move_and_slide()
 
 	if !is_interacting_with_gift:
