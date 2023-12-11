@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cx653js0ld08t"]
+[gd_scene load_steps=6 format=3 uid="uid://cx653js0ld08t"]
 
 [ext_resource type="Script" path="res://enemy_boss/boss.gd" id="1_fpqwf"]
-[ext_resource type="Texture2D" uid="uid://cpcbw38xnldot" path="res://icon.svg" id="2_qx042"]
+[ext_resource type="Texture2D" uid="uid://ce81kbbk6q5tv" path="res://icon.svg" id="2_qx042"]
+[ext_resource type="Texture2D" uid="uid://biov3uroqsca" path="res://Assets/lifebar_bg.png" id="3_qttko"]
+[ext_resource type="Texture2D" uid="uid://ctmu8msw6qeo5" path="res://Assets/lifebar_fill.png" id="4_nctbs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1b63t"]
 size = Vector2(131, 129)
@@ -18,3 +20,16 @@ texture = ExtResource("2_qx042")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1.5, 1.5)
 shape = SubResource("RectangleShape2D_1b63t")
+
+[node name="HealthBar" type="TextureProgressBar" parent="."]
+offset_left = -64.0
+offset_top = -88.0
+offset_right = 332.0
+offset_bottom = -35.0
+scale = Vector2(0.337366, 0.230151)
+max_value = 200.0
+value = 200.0
+texture_under = ExtResource("3_qttko")
+texture_progress = ExtResource("4_nctbs")
+tint_under = Color(0.811765, 0, 0.894118, 1)
+tint_progress = Color(0.984314, 0, 0.168627, 1)
