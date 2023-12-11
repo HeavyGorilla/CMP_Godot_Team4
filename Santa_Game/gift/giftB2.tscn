@@ -3,16 +3,16 @@
 [ext_resource type="Script" path="res://gift/giftB2.gd" id="1_xl74n"]
 [ext_resource type="Texture2D" uid="uid://jytwkinw5l6w" path="res://image/greengift_new.png" id="2_l0lcj"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_85iig"]
-radius = 19.4165
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cavqo"]
+height = 25.0
 
 [node name="GiftB2" type="RigidBody2D"]
 script = ExtResource("1_xl74n")
 
 [node name="GiftB" type="Sprite2D" parent="."]
-scale = Vector2(0.232796, 0.232796)
+scale = Vector2(0.35, 0.35)
 texture = ExtResource("2_l0lcj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(1.52, 1.52)
-shape = SubResource("CircleShape2D_85iig")
+scale = Vector2(4.4, 4.4)
+shape = SubResource("CapsuleShape2D_cavqo")
