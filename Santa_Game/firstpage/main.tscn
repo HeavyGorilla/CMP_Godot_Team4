@@ -1,13 +1,29 @@
-[gd_scene load_steps=7 format=3 uid="uid://clc827byygcek"]
+[gd_scene load_steps=9 format=3 uid="uid://clc827byygcek"]
 
 [ext_resource type="Texture2D" uid="uid://c7rw3udvlj6ir" path="res://Assets/background.png" id="1_b78vs"]
 [ext_resource type="PackedScene" uid="uid://f88msr0mg0tw" path="res://firstpage/setting.tscn" id="2_e3qcx"]
 [ext_resource type="PackedScene" uid="uid://da5h5htheogvh" path="res://firstpage/exit.tscn" id="3_wfen7"]
 [ext_resource type="PackedScene" uid="uid://w7mwu6htu8ev" path="res://firstpage/GameStart.tscn" id="4_wvygb"]
 [ext_resource type="PackedScene" uid="uid://cfxe0ijsf2wel" path="res://firstpage/Instruction.tscn" id="5_imm2y"]
+[ext_resource type="Texture2D" uid="uid://caxosuyqjf3hf" path="res://Assets/snowflake.png" id="6_wm3d8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u2y3i"]
 size = Vector2(1618, 910)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_q4nfm"]
+emission_shape = 3
+emission_box_extents = Vector3(100, 1, 1)
+particle_flag_disable_z = true
+direction = Vector3(-1, 1, 0)
+spread = 30.0
+gravity = Vector3(0, 60, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 30.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 0.03
+scale_max = 0.03
+color = Color(1, 1, 1, 0.784314)
 
 [node name="main" type="StaticBody2D"]
 
@@ -32,5 +48,13 @@ position = Vector2(483, 130)
 
 [node name="Instruction" parent="." instance=ExtResource("5_imm2y")]
 position = Vector2(666, 395)
+
+[node name="snowfall" type="GPUParticles2D" parent="."]
+position = Vector2(970, -6)
+scale = Vector2(9.76, 3.48)
+amount = 50
+process_material = SubResource("ParticleProcessMaterial_q4nfm")
+texture = ExtResource("6_wm3d8")
+lifetime = 4.0
 
 [connection signal="input_event" from="Instruction" to="Instruction" method="_on_input_event"]
