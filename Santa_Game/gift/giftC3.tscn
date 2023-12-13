@@ -3,8 +3,7 @@
 [ext_resource type="Script" path="res://gift/giftC3.gd" id="1_c3aim"]
 [ext_resource type="Texture2D" uid="uid://dpcllbige5uky" path="res://image/yellowgift_new.png" id="2_np3mb"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nn0cm"]
-height = 25.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_1bc25"]
 
 [node name="GiftC3" type="RigidBody2D"]
 script = ExtResource("1_c3aim")
@@ -15,5 +14,7 @@ scale = Vector2(0.4, 0.401)
 texture = ExtResource("2_np3mb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(4.4, 4.4)
-shape = SubResource("CapsuleShape2D_nn0cm")
+position = Vector2(0, 2.83144)
+rotation = 3.14159
+scale = Vector2(4.17371, 4.93371)
+shape = SubResource("CircleShape2D_1bc25")
