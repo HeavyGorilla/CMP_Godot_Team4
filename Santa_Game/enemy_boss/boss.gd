@@ -32,6 +32,8 @@ func _on_move_timer_timeout():
 	velocity = random_direction * speed  # 속도 업데이트
 
 func _physics_process(delta):
+	$HealthBar.value = HP
+	
 	if is_firing:
 		fire_pause_timer += delta
 		if fire_pause_timer >= fire_pause_duration:

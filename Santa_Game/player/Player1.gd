@@ -29,6 +29,7 @@ func _ready():
 
 func _physics_process(_delta):
 	velocity = Input.get_vector("left", "right", "up", "down") * 300
+	position.x += randi_range(-0.1, 0.1)
 	move_and_slide()
 
 	if !is_interacting_with_gift:
@@ -110,7 +111,7 @@ func _on_area_2d_body_exited(body):
 
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("prison"):
-#		print("감옥 터치")
+		print("감옥 터치")
 		if touched_rudolph == null:
 			touched_rudolph = area
 
@@ -123,5 +124,5 @@ func _on_area_2d_area_exited(area):
 func _input(event):
 	if touched_rudolph != null and event.is_action_pressed("rescue"):
 		emit_signal("rudolph_rescued")
-#		print("루돌프 구출")
+		print("루돌프 구출")
 		touched_rudolph.queue_free()

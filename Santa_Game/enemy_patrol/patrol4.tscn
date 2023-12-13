@@ -1,18 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://bqnj70b5dui6m"]
+[gd_scene load_steps=4 format=3 uid="uid://cklh1bwuydaro"]
 
-[ext_resource type="Script" path="res://enemy_patrol/patrol1.gd" id="1_3pwku"]
-[ext_resource type="SpriteFrames" uid="uid://dpe6i61msqnu2" path="res://enemy_patrol/patrol.tres" id="2_vt0vd"]
+[ext_resource type="Script" path="res://enemy_patrol/patrol4.gd" id="1_o6ajr"]
+[ext_resource type="SpriteFrames" uid="uid://dpe6i61msqnu2" path="res://enemy_patrol/patrol.tres" id="2_j7xau"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gq1sf"]
 size = Vector2(130, 132)
 
-[node name="patrol1" type="CharacterBody2D"]
+[node name="patrol4" type="CharacterBody2D"]
 collision_layer = 512
 collision_mask = 511
-script = ExtResource("1_3pwku")
+script = ExtResource("1_o6ajr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(7, 1)
+position = Vector2(11, 2)
 shape = SubResource("RectangleShape2D_gq1sf")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
@@ -22,7 +22,7 @@ collision_mask = 511
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-2, -12)
 scale = Vector2(4.21094, 4.21094)
-sprite_frames = ExtResource("2_vt0vd")
+sprite_frames = ExtResource("2_j7xau")
 animation = &"patrol_walk"
 autoplay = "patrol_walk"
 frame_progress = 0.232154

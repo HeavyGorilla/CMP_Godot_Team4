@@ -1,23 +1,29 @@
 [gd_scene load_steps=4 format=3 uid="uid://wox1mtjb704v"]
 
 [ext_resource type="Script" path="res://enemy_patrol/patrol3.gd" id="1_1o6va"]
-[ext_resource type="Texture2D" uid="uid://bxr8m8d7vgt0s" path="res://icon.svg" id="2_1pso1"]
+[ext_resource type="SpriteFrames" uid="uid://dpe6i61msqnu2" path="res://enemy_patrol/patrol.tres" id="2_q47ws"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gq1sf"]
 size = Vector2(130, 132)
 
 [node name="patrol3" type="CharacterBody2D"]
 collision_layer = 512
-collision_mask = 1023
+collision_mask = 511
 script = ExtResource("1_1o6va")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(1, 0, 1, 1)
-texture = ExtResource("2_1pso1")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(7, 1)
 shape = SubResource("RectangleShape2D_gq1sf")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 target_position = Vector2(0, 0)
 collision_mask = 511
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-2, -12)
+scale = Vector2(4.21094, 4.21094)
+sprite_frames = ExtResource("2_q47ws")
+animation = &"patrol_walk"
+autoplay = "patrol_walk"
+frame_progress = 0.232154
+speed_scale = 2.0

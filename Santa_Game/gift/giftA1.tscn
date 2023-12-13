@@ -3,7 +3,8 @@
 [ext_resource type="Script" path="res://gift/giftA1.gd" id="1_7iah4"]
 [ext_resource type="Texture2D" uid="uid://c23w0dt7tthdj" path="res://image/pinkgift.png" id="2_rhova"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_igr3o"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jf5oo"]
+height = 123.493
 
 [node name="GiftA1" type="RigidBody2D"]
 collision_layer = 8
@@ -13,10 +14,10 @@ script = ExtResource("1_7iah4")
 
 [node name="GiftA" type="Sprite2D" parent="."]
 position = Vector2(0, 1)
-scale = Vector2(0.194953, 0.194953)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_rhova")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2.77783)
-scale = Vector2(2.12011, 2.12011)
-shape = SubResource("CapsuleShape2D_igr3o")
+position = Vector2(1.5, 3)
+scale = Vector2(3.75348, 0.80976)
+shape = SubResource("CapsuleShape2D_jf5oo")

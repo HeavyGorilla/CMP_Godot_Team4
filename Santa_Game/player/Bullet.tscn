@@ -1,16 +1,49 @@
-[gd_scene load_steps=4 format=3 uid="uid://dc7hpubkax2g0"]
+[gd_scene load_steps=8 format=3 uid="uid://dc7hpubkax2g0"]
 
 [ext_resource type="Script" path="res://player/Bullet.gd" id="1_ml1ie"]
-[ext_resource type="Texture2D" uid="uid://hirmj65c3jvd" path="res://Assets/snowball.png" id="2_uf760"]
+[ext_resource type="Texture2D" uid="uid://cfca7he562xlt" path="res://Assets/snowball (1).png" id="2_qtrta"]
+[ext_resource type="Texture2D" uid="uid://dem4m2moogkgg" path="res://Assets/snowball (3).png" id="3_d64im"]
+[ext_resource type="Texture2D" uid="uid://cvvdtqld8pnuw" path="res://Assets/snowball (2).png" id="4_g7sjw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p18r2"]
 
+[sub_resource type="Animation" id="Animation_qhn41"]
+resource_name = "new_animation"
+length = 0.13
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0505, 0.1049),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_qtrta"), ExtResource("3_d64im"), ExtResource("4_g7sjw")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_niu24"]
+_data = {
+"new_animation": SubResource("Animation_qhn41")
+}
+
 [node name="Bullet" type="Area2D"]
+collision_mask = 1022
 script = ExtResource("1_ml1ie")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -3)
-texture = ExtResource("2_uf760")
+position = Vector2(2, 1)
+scale = Vector2(0.144834, 0.144834)
+texture = ExtResource("2_qtrta")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.8, 1.8)
 shape = SubResource("CircleShape2D_p18r2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_niu24")
+}
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
