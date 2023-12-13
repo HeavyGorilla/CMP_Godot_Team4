@@ -1,14 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://cka3e7s4fq3yb"]
 
 [ext_resource type="Script" path="res://enemy_boss/boss_bullet.gd" id="1_42ttf"]
-[ext_resource type="Texture2D" uid="uid://cpcbw38xnldot" path="res://icon.svg" id="2_m7o4c"]
+[ext_resource type="Texture2D" uid="uid://cawpwvayox4t0" path="res://icon.svg" id="2_m7o4c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rq84g"]
 size = Vector2(32, 32)
 
 [node name="boss_bullet" type="Area2D"]
 collision_layer = 512
-collision_mask = 3
+collision_mask = 1027
 script = ExtResource("1_42ttf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
