@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bqk3cxl45t0v0"]
+[gd_scene load_steps=8 format=3 uid="uid://bqk3cxl45t0v0"]
 
 [ext_resource type="Texture2D" uid="uid://cjuca8oey0u6d" path="res://Assets/gameover.png" id="1_jb4a4"]
 [ext_resource type="Script" path="res://Game/Retry.gd" id="2_sf3kf"]
 [ext_resource type="Script" path="res://Game/Quit.gd" id="3_8r1yx"]
+[ext_resource type="AudioStream" uid="uid://cuskvcfosnl5k" path="res://Assets/gameover.wav" id="4_usjv4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bjc8s"]
 size = Vector2(1605, 905)
@@ -37,6 +38,10 @@ script = ExtResource("3_8r1yx")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Quit"]
 position = Vector2(1016, 649)
 shape = SubResource("RectangleShape2D_ufr8h")
+
+[node name="gameovermusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_usjv4")
+autoplay = true
 
 [connection signal="input_event" from="Retry" to="Retry" method="_on_input_event"]
 [connection signal="input_event" from="Quit" to="Quit" method="_on_input_event"]
