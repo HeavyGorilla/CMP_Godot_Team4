@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://clc827byygcek"]
+[gd_scene load_steps=10 format=3 uid="uid://clc827byygcek"]
 
 [ext_resource type="Texture2D" uid="uid://c7rw3udvlj6ir" path="res://Assets/background.png" id="1_b78vs"]
 [ext_resource type="PackedScene" uid="uid://f88msr0mg0tw" path="res://firstpage/setting.tscn" id="2_e3qcx"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://w7mwu6htu8ev" path="res://firstpage/GameStart.tscn" id="4_wvygb"]
 [ext_resource type="PackedScene" uid="uid://cfxe0ijsf2wel" path="res://firstpage/Instruction.tscn" id="5_imm2y"]
 [ext_resource type="Texture2D" uid="uid://caxosuyqjf3hf" path="res://Assets/snowflake.png" id="6_wm3d8"]
+[ext_resource type="AudioStream" uid="uid://ca8ywefp2d6qx" path="res://Assets/firstpagemusic.mp3" id="7_wlegk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u2y3i"]
 size = Vector2(1618, 910)
@@ -56,5 +57,9 @@ amount = 50
 process_material = SubResource("ParticleProcessMaterial_q4nfm")
 texture = ExtResource("6_wm3d8")
 lifetime = 4.0
+
+[node name="firstpagemusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_wlegk")
+autoplay = true
 
 [connection signal="input_event" from="Instruction" to="Instruction" method="_on_input_event"]
