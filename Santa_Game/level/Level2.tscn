@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b3e4udemf7jow"]
+[gd_scene load_steps=15 format=3 uid="uid://b3e4udemf7jow"]
 
 [ext_resource type="Texture2D" uid="uid://b2ik7njwnesjd" path="res://tilemap_asset/16x16/Tilesets/Solaria Demo Update 01.png" id="1_doqah"]
 [ext_resource type="Texture2D" uid="uid://c4aqbth7m6l2p" path="res://tilemap_asset/16x16/kenney_tiny-ski/Tilemap/tilemap_packed.png" id="2_wgd84"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dc7hpubkax2g0" path="res://player/Bullet.tscn" id="6_lgcn6"]
 [ext_resource type="Texture2D" uid="uid://m4m3npv05luf" path="res://Assets/crosshair.png" id="8_ptltf"]
 [ext_resource type="PackedScene" uid="uid://cx653js0ld08t" path="res://enemy_boss/boss.tscn" id="9_hgloh"]
+[ext_resource type="AudioStream" uid="uid://dn7qgvtc0n27j" path="res://Assets/stage2music.mp3" id="10_ni403"]
 [ext_resource type="PackedScene" uid="uid://b67gd2sayaxds" path="res://map/tree.tscn" id="10_ro1wt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cgfh5"]
@@ -2183,3 +2184,7 @@ position = Vector2(-1080, -240)
 
 [node name="boss" parent="test_boss2" groups=["boss"] instance=ExtResource("9_hgloh")]
 position = Vector2(1024, 105)
+
+[node name="stage2music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_ni403")
+autoplay = true

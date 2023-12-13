@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://coq7wsmxvqnl4"]
+[gd_scene load_steps=42 format=3 uid="uid://coq7wsmxvqnl4"]
 
 [ext_resource type="PackedScene" uid="uid://c6m2oq7p4w3es" path="res://map/level1_map.tscn" id="1_ncw1r"]
 [ext_resource type="Texture2D" uid="uid://c4aqbth7m6l2p" path="res://tilemap_asset/16x16/kenney_tiny-ski/Tilemap/tilemap_packed.png" id="2_0w0rv"]
@@ -31,6 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://wox1mtjb704v" path="res://enemy_patrol/patrol3.tscn" id="29_syki0"]
 [ext_resource type="PackedScene" uid="uid://cklh1bwuydaro" path="res://enemy_patrol/patrol4.tscn" id="31_7ddeq"]
 [ext_resource type="PackedScene" uid="uid://228m151n03bk" path="res://enemy_patrol/patrol5.tscn" id="32_kcllh"]
+[ext_resource type="AudioStream" uid="uid://cc7bccomtaa7p" path="res://Assets/stage1music.mp3" id="33_bikng"]
 [ext_resource type="PackedScene" uid="uid://bmw7ftat2tj31" path="res://enemy_patrol/patrol6.tscn" id="33_nqbdf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_up4bn"]
@@ -1074,6 +1075,10 @@ position = Vector2(791.667, -2713.89)
 
 [node name="Marker2D4" type="Marker2D" parent="path6"]
 position = Vector2(1033.33, -2698.61)
+
+[node name="stage1music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("33_bikng")
+autoplay = true
 
 [connection signal="complete_giftA" from="CanvasLayer/giftAPointLabel" to="Player1" method="_on_gift_a_point_label_complete_gift_a"]
 [connection signal="giftApointUp" from="CanvasLayer/giftAPointLabel" to="CanvasLayer/PointLabel" method="_on_gift_a_point_label_gift_apoint_up"]
