@@ -657,22 +657,22 @@ script = ExtResource("8_2vkl5")
 [node name="Gifts" type="Node" parent="."]
 
 [node name="GiftA1" parent="Gifts" groups=["gift"] instance=ExtResource("14_auglw")]
-position = Vector2(1341, 4214)
+position = Vector2(1790, 4100)
 mass = 5.0
 linear_damp = 5.0
 
 [node name="GiftA2" parent="Gifts" groups=["gift"] instance=ExtResource("16_4fd2r")]
-position = Vector2(1340, 4102)
+position = Vector2(1664, 4100)
 mass = 5.0
 linear_damp = 5.0
 
 [node name="GiftA3" parent="Gifts" groups=["gift"] instance=ExtResource("17_xej8f")]
-position = Vector2(1341, 3993)
+position = Vector2(1543, 4100)
 mass = 3.0
 linear_damp = 5.0
 
 [node name="GiftB1" parent="Gifts" groups=["gift"] instance=ExtResource("19_gqvql")]
-position = Vector2(-132, 1621)
+position = Vector2(-92, 1574)
 collision_layer = 32
 collision_mask = 99
 mass = 3.0
@@ -680,7 +680,7 @@ gravity_scale = 0.0
 linear_damp = 5.0
 
 [node name="GiftB2" parent="Gifts" groups=["gift"] instance=ExtResource("20_g1rof")]
-position = Vector2(-41, 1620)
+position = Vector2(-1.00002, 1573)
 scale = Vector2(1, 0.996)
 collision_layer = 32
 collision_mask = 99
@@ -689,7 +689,7 @@ gravity_scale = 0.0
 linear_damp = 5.0
 
 [node name="GiftB3" parent="Gifts" groups=["gift"] instance=ExtResource("21_a5urq")]
-position = Vector2(52, 1621)
+position = Vector2(92, 1574)
 collision_layer = 32
 collision_mask = 99
 mass = 3.0
@@ -697,7 +697,7 @@ gravity_scale = 0.0
 linear_damp = 5.0
 
 [node name="GiftC1" parent="Gifts" groups=["gift"] instance=ExtResource("9_ehcnq")]
-position = Vector2(312, 3334)
+position = Vector2(-1, 3437)
 collision_layer = 128
 collision_mask = 387
 mass = 3.0
@@ -705,7 +705,7 @@ gravity_scale = 0.0
 linear_damp = 5.0
 
 [node name="GiftC2" parent="Gifts" groups=["gift"] instance=ExtResource("10_mjmj8")]
-position = Vector2(312, 3422)
+position = Vector2(133, 3437)
 collision_layer = 128
 collision_mask = 387
 mass = 3.0
@@ -713,7 +713,7 @@ gravity_scale = 0.0
 linear_damp = 5.0
 
 [node name="GiftC3" parent="Gifts" groups=["gift"] instance=ExtResource("11_jb72o")]
-position = Vector2(312, 3509)
+position = Vector2(263, 3437)
 collision_layer = 128
 collision_mask = 387
 mass = 3.0
@@ -825,7 +825,7 @@ shape = SubResource("RectangleShape2D_kufty")
 
 [node name="Player1" parent="." groups=["santa"] instance=ExtResource("26_4e378")]
 z_index = 2
-position = Vector2(1669.44, 27.7776)
+position = Vector2(1401.39, 606.944)
 rotation = -0.00569615
 scale = Vector2(1.16699, 1.16699)
 
