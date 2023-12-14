@@ -10,9 +10,9 @@ height = 25.0
 script = ExtResource("1_ccnpk")
 
 [node name="GiftB" type="Sprite2D" parent="."]
-scale = Vector2(0.35, 0.35)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_vnhpe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(4.4, 4.4)
+scale = Vector2(6.399, 6.12)
 shape = SubResource("CapsuleShape2D_3iaak")

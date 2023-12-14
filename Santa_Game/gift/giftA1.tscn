@@ -14,10 +14,10 @@ script = ExtResource("1_7iah4")
 
 [node name="GiftA" type="Sprite2D" parent="."]
 position = Vector2(0, 1)
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_rhova")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1.5, 3)
-scale = Vector2(3.75348, 0.80976)
+scale = Vector2(4.873, 1.09)
 shape = SubResource("CapsuleShape2D_jf5oo")
