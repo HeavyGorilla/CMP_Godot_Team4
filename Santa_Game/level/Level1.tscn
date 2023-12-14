@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://coq7wsmxvqnl4"]
+[gd_scene load_steps=36 format=3 uid="uid://coq7wsmxvqnl4"]
 
 [ext_resource type="PackedScene" uid="uid://c6m2oq7p4w3es" path="res://map/level1_map.tscn" id="1_ncw1r"]
 [ext_resource type="Texture2D" uid="uid://c4aqbth7m6l2p" path="res://tilemap_asset/16x16/kenney_tiny-ski/Tilemap/tilemap_packed.png" id="2_0w0rv"]
@@ -12,19 +12,13 @@
 [ext_resource type="Texture2D" uid="uid://bnpk074oe2vy0" path="res://image/yellowbox.png" id="9_21vf0"]
 [ext_resource type="PackedScene" uid="uid://drt65dvrqucg2" path="res://gift/giftC1.tscn" id="9_ehcnq"]
 [ext_resource type="Texture2D" uid="uid://ba0q07sxspbsj" path="res://image/greenbox.png" id="10_1dusf"]
-[ext_resource type="PackedScene" uid="uid://dnn11dahmdv14" path="res://gift/giftC2.tscn" id="10_mjmj8"]
-[ext_resource type="PackedScene" uid="uid://jmtyvdsn4aef" path="res://gift/giftC3.tscn" id="11_jb72o"]
 [ext_resource type="Texture2D" uid="uid://dap7p3ejeyt2j" path="res://image/graybox.png" id="11_o7bhx"]
 [ext_resource type="Script" path="res://giftbox/giftABox.gd" id="12_32fx4"]
 [ext_resource type="PackedScene" uid="uid://q7sp5k24te61" path="res://prison/interaction_manager.tscn" id="12_favbd"]
 [ext_resource type="Script" path="res://giftbox/giftCBox.gd" id="13_8eej8"]
 [ext_resource type="PackedScene" uid="uid://5l4esc5rjrju" path="res://gift/giftA1.tscn" id="14_auglw"]
-[ext_resource type="PackedScene" uid="uid://ver3hj7q8m26" path="res://gift/giftA2.tscn" id="16_4fd2r"]
 [ext_resource type="Script" path="res://giftbox/giftBBox.gd" id="16_d6uqu"]
-[ext_resource type="PackedScene" uid="uid://cord1wu5j5avi" path="res://gift/giftA3.tscn" id="17_xej8f"]
 [ext_resource type="PackedScene" uid="uid://bvxjtlywx0kus" path="res://gift/giftB1.tscn" id="19_gqvql"]
-[ext_resource type="PackedScene" uid="uid://cq5qxlddn65cg" path="res://gift/giftB2.tscn" id="20_g1rof"]
-[ext_resource type="PackedScene" uid="uid://8hn8ur8b1381" path="res://gift/giftB3.tscn" id="21_a5urq"]
 [ext_resource type="PackedScene" uid="uid://kyi7t88opsbw" path="res://player/Player1.tscn" id="26_4e378"]
 [ext_resource type="PackedScene" uid="uid://bqnj70b5dui6m" path="res://enemy_patrol/patrol1.tscn" id="27_6dtuc"]
 [ext_resource type="PackedScene" uid="uid://dno3uobook8d6" path="res://enemy_patrol/patrol2.tscn" id="28_c1j72"]
@@ -658,39 +652,12 @@ script = ExtResource("8_2vkl5")
 [node name="Gifts" type="Node" parent="."]
 
 [node name="GiftA1" parent="Gifts" groups=["gift"] instance=ExtResource("14_auglw")]
-position = Vector2(1790, 4100)
+position = Vector2(1496, 4090)
 mass = 5.0
-linear_damp = 5.0
-
-[node name="GiftA2" parent="Gifts" groups=["gift"] instance=ExtResource("16_4fd2r")]
-position = Vector2(1664, 4100)
-mass = 5.0
-linear_damp = 5.0
-
-[node name="GiftA3" parent="Gifts" groups=["gift"] instance=ExtResource("17_xej8f")]
-position = Vector2(1543, 4100)
-mass = 3.0
 linear_damp = 5.0
 
 [node name="GiftB1" parent="Gifts" groups=["gift"] instance=ExtResource("19_gqvql")]
-position = Vector2(-92, 1574)
-collision_layer = 32
-collision_mask = 99
-mass = 3.0
-gravity_scale = 0.0
-linear_damp = 5.0
-
-[node name="GiftB2" parent="Gifts" groups=["gift"] instance=ExtResource("20_g1rof")]
-position = Vector2(-1.00002, 1573)
-scale = Vector2(1, 0.996)
-collision_layer = 32
-collision_mask = 99
-mass = 3.0
-gravity_scale = 0.0
-linear_damp = 5.0
-
-[node name="GiftB3" parent="Gifts" groups=["gift"] instance=ExtResource("21_a5urq")]
-position = Vector2(92, 1574)
+position = Vector2(-14, 1589)
 collision_layer = 32
 collision_mask = 99
 mass = 3.0
@@ -698,23 +665,7 @@ gravity_scale = 0.0
 linear_damp = 5.0
 
 [node name="GiftC1" parent="Gifts" groups=["gift"] instance=ExtResource("9_ehcnq")]
-position = Vector2(-1, 3437)
-collision_layer = 128
-collision_mask = 387
-mass = 3.0
-gravity_scale = 0.0
-linear_damp = 5.0
-
-[node name="GiftC2" parent="Gifts" groups=["gift"] instance=ExtResource("10_mjmj8")]
-position = Vector2(133, 3437)
-collision_layer = 128
-collision_mask = 387
-mass = 3.0
-gravity_scale = 0.0
-linear_damp = 5.0
-
-[node name="GiftC3" parent="Gifts" groups=["gift"] instance=ExtResource("11_jb72o")]
-position = Vector2(263, 3437)
+position = Vector2(195, 3435)
 collision_layer = 128
 collision_mask = 387
 mass = 3.0
@@ -826,7 +777,7 @@ shape = SubResource("RectangleShape2D_kufty")
 
 [node name="Player1" parent="." groups=["santa"] instance=ExtResource("26_4e378")]
 z_index = 2
-position = Vector2(1401.39, 606.944)
+position = Vector2(1681.94, 918.055)
 rotation = -0.00569615
 scale = Vector2(1.16699, 1.16699)
 
@@ -1088,25 +1039,11 @@ autoplay = true
 [connection signal="giftCpointUp" from="CanvasLayer/giftCPointLabel" to="CanvasLayer/PointLabel" method="_on_gift_c_point_label_gift_cpoint_up"]
 [connection signal="body_entered" from="Gifts/GiftA1" to="Player1" method="_on_gift_a_1_body_entered"]
 [connection signal="giftA_collected" from="Gifts/GiftA1" to="CanvasLayer/giftAPointLabel" method="_on_gift_a_1_gift_a_collected"]
-[connection signal="giftA_collected" from="Gifts/GiftA2" to="CanvasLayer/giftAPointLabel" method="_on_gift_a_2_gift_a_collected"]
-[connection signal="giftA_collected" from="Gifts/GiftA3" to="CanvasLayer/giftAPointLabel" method="_on_gift_a_3_gift_a_collected"]
 [connection signal="giftB_collected" from="Gifts/GiftB1" to="CanvasLayer/giftBPointLabel" method="_on_gift_b_1_gift_b_collected"]
-[connection signal="giftB_collected" from="Gifts/GiftB2" to="CanvasLayer/giftBPointLabel" method="_on_gift_b_2_gift_b_collected"]
-[connection signal="giftB_collected" from="Gifts/GiftB3" to="CanvasLayer/giftBPointLabel" method="_on_gift_b_3_gift_b_collected"]
 [connection signal="giftC_collected" from="Gifts/GiftC1" to="CanvasLayer/giftCPointLabel" method="_on_gift_c_1_gift_c_collected"]
-[connection signal="giftC_collected" from="Gifts/GiftC2" to="CanvasLayer/giftCPointLabel" method="_on_gift_c_2_gift_c_collected"]
-[connection signal="giftC_collected" from="Gifts/GiftC3" to="CanvasLayer/giftCPointLabel" method="_on_gift_c_3_gift_c_collected"]
 [connection signal="body_entered" from="GiftABox" to="Gifts/GiftA1" method="_on_gift_a_box_body_entered"]
-[connection signal="body_entered" from="GiftABox" to="Gifts/GiftA2" method="_on_gift_a_box_body_entered"]
-[connection signal="body_entered" from="GiftABox" to="Gifts/GiftA3" method="_on_gift_a_box_body_entered"]
 [connection signal="body_entered" from="GiftBBox" to="Gifts/GiftB1" method="_on_gift_b_box_body_entered"]
-[connection signal="body_entered" from="GiftBBox" to="Gifts/GiftB2" method="_on_gift_b_box_body_entered"]
-[connection signal="body_entered" from="GiftBBox" to="Gifts/GiftB3" method="_on_gift_b_box_body_entered"]
-[connection signal="body_entered" from="GiftCBox" to="Gifts/GiftC1" method="_on_gift_c_box_body_entered"]
 [connection signal="body_entered" from="GiftCBox" to="Gifts/GiftC1" method="_on_red_box_body_entered"]
-[connection signal="body_entered" from="GiftCBox" to="Gifts/GiftC2" method="_on_gift_c_box_body_entered"]
-[connection signal="body_entered" from="GiftCBox" to="Gifts/GiftC2" method="_on_red_box_body_entered"]
-[connection signal="body_entered" from="GiftCBox" to="Gifts/GiftC3" method="_on_gift_c_box_body_entered"]
-[connection signal="body_entered" from="GiftCBox" to="Gifts/GiftC3" method="_on_red_box_body_entered"]
+[connection signal="body_entered" from="GiftCBox" to="Gifts/GiftC1" method="_on_gift_c_box_body_entered"]
 [connection signal="body_entered" from="FinishArea" to="Player1" method="_on_finish_area_body_entered"]
 [connection signal="rudolph_rescued" from="Player1" to="CanvasLayer/PointLabel" method="_on_player_1_rudolph_rescued"]
