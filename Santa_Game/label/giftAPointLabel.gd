@@ -5,7 +5,7 @@ signal complete_giftA
 signal giftApointUp
 
 func _ready():
-	text = "GiftA Points: "+str(1-giftAPoints)
+	text = "X"+str(1-giftAPoints)
 	
 	if giftAPoints >= 1:
 		print("giftA 완료")
