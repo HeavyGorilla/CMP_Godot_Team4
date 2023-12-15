@@ -129,7 +129,7 @@ func _input(event):
 
 	if touched_rudolph != null and event.is_action_pressed("rescue"):
 		emit_signal("rudolph_rescued")
-		if touched_rudolph == $"../Prison1":
+		if touched_rudolph == $"../Prison":
 			emit_signal("resquePrison1")
 		if touched_rudolph == $"../Prison2":
 			emit_signal("resquePrison2")
