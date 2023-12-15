@@ -1,6 +1,11 @@
 extends CharacterBody2D
 
 class_name santa
+signal resquePrison1
+signal resquePrison2
+signal resquePrison3
+signal resquePrison4
+signal resquePrison5
 
 #@onready var camera = $"../Camera2D"  # Camera2D 노드 참조
 #var default_zoom = Vector2(1, 1)  # 기본 줌 수준
@@ -125,13 +130,13 @@ func _input(event):
 	if touched_rudolph != null and event.is_action_pressed("rescue"):
 		emit_signal("rudolph_rescued")
 		if touched_rudolph == $"../Prison1":
-			print("감옥1 구출")
+			emit_signal("resquePrison1")
 		if touched_rudolph == $"../Prison2":
-			print("감옥2 구출")
+			emit_signal("resquePrison2")
 		if touched_rudolph == $"../Prison3":
-			print("감옥3 구출")
+			emit_signal("resquePrison3")
 		if touched_rudolph == $"../Prison4":
-			print("감옥4 구출")
+			emit_signal("resquePrison4")
 		if touched_rudolph == $"../Prison5":
-			print("감옥5 구출")
+			emit_signal("resquePrison5")
 		touched_rudolph.queue_free()
