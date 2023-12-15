@@ -21,7 +21,7 @@ func _ready():
 		
 	# Patrol에 따라 달라짐: range, path#
 	for i in range(1, 5):
-		var node = get_node("../path1/Marker2D" + str(i))
+		var node = get_node("../path6/Marker2D" + str(i))
 		path_nodes.append(node.position)
 
 	# test용 이동
