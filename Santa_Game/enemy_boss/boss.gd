@@ -109,6 +109,7 @@ func take_damage(damage_amount):
 	HP -= damage_amount
 	if HP <= 0:
 		die()
+		get_tree().change_scene_to_file("res://Game/stage2clear.tscn")
 
 func die():
 	# 보스 사망 처리 로직
