@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://coq7wsmxvqnl4"]
+[gd_scene load_steps=45 format=3 uid="uid://coq7wsmxvqnl4"]
 
 [ext_resource type="PackedScene" uid="uid://c6m2oq7p4w3es" path="res://map/level1_map.tscn" id="1_ncw1r"]
 [ext_resource type="Texture2D" uid="uid://c4aqbth7m6l2p" path="res://tilemap_asset/16x16/kenney_tiny-ski/Tilemap/tilemap_packed.png" id="2_0w0rv"]
@@ -23,7 +23,12 @@
 [ext_resource type="Texture2D" uid="uid://br5is1oux4a5c" path="res://image/rudolph_crying.png" id="17_nrxcq"]
 [ext_resource type="PackedScene" uid="uid://bvxjtlywx0kus" path="res://gift/giftB1.tscn" id="19_gqvql"]
 [ext_resource type="Texture2D" uid="uid://c8sbdd0df4s4g" path="res://image/door.png" id="20_sdwhl"]
+[ext_resource type="Script" path="res://prison/Deer1.gd" id="21_yfckg"]
+[ext_resource type="Script" path="res://prison/Deer2.gd" id="23_kcqir"]
+[ext_resource type="Script" path="res://prison/Deer3.gd" id="24_71m4n"]
+[ext_resource type="Script" path="res://prison/Deer4.gd" id="25_8dlh2"]
 [ext_resource type="PackedScene" uid="uid://kyi7t88opsbw" path="res://player/Player1.tscn" id="26_4e378"]
+[ext_resource type="Script" path="res://prison/Deer5.gd" id="26_b83um"]
 [ext_resource type="PackedScene" uid="uid://bqnj70b5dui6m" path="res://enemy_patrol/patrol1.tscn" id="27_6dtuc"]
 [ext_resource type="PackedScene" uid="uid://dno3uobook8d6" path="res://enemy_patrol/patrol2.tscn" id="28_c1j72"]
 [ext_resource type="PackedScene" uid="uid://wox1mtjb704v" path="res://enemy_patrol/patrol3.tscn" id="29_syki0"]
@@ -768,6 +773,7 @@ shape = SubResource("RectangleShape2D_1kho7")
 position = Vector2(-2250, 477.778)
 scale = Vector2(0.113966, 0.113966)
 texture = ExtResource("17_nrxcq")
+script = ExtResource("21_yfckg")
 
 [node name="Prison" parent="." instance=ExtResource("7_m0rf1")]
 position = Vector2(-2240.28, 484.722)
@@ -777,6 +783,7 @@ scale = Vector2(1.38889, 1.38889)
 position = Vector2(-2796.54, -880.32)
 scale = Vector2(0.113966, 0.113966)
 texture = ExtResource("17_nrxcq")
+script = ExtResource("23_kcqir")
 
 [node name="Prison2" parent="." instance=ExtResource("7_m0rf1")]
 position = Vector2(-2786.82, -873.375)
@@ -786,6 +793,7 @@ scale = Vector2(1.38889, 1.38889)
 position = Vector2(-1231.26, -474.764)
 scale = Vector2(0.113966, 0.113966)
 texture = ExtResource("17_nrxcq")
+script = ExtResource("24_71m4n")
 
 [node name="Prison3" parent="." instance=ExtResource("7_m0rf1")]
 position = Vector2(-1221.54, -467.819)
@@ -795,6 +803,7 @@ scale = Vector2(1.38889, 1.38889)
 position = Vector2(-1352.1, -3678.93)
 scale = Vector2(0.113966, 0.113966)
 texture = ExtResource("17_nrxcq")
+script = ExtResource("25_8dlh2")
 
 [node name="Prison4" parent="." instance=ExtResource("7_m0rf1")]
 position = Vector2(-1342.37, -3671.98)
@@ -804,6 +813,7 @@ scale = Vector2(1.38889, 1.38889)
 position = Vector2(1861.79, -3678.93)
 scale = Vector2(0.113966, 0.113966)
 texture = ExtResource("17_nrxcq")
+script = ExtResource("26_b83um")
 
 [node name="Prison5" parent="." instance=ExtResource("7_m0rf1")]
 position = Vector2(1871.51, -3671.98)
@@ -1086,6 +1096,8 @@ position = Vector2(1033.33, -2698.61)
 stream = ExtResource("33_bikng")
 autoplay = true
 
+[node name="Timer" type="Timer" parent="."]
+
 [connection signal="complete_giftA" from="CanvasLayer/giftAPointLabel" to="Player1" method="_on_gift_a_point_label_complete_gift_a"]
 [connection signal="giftApointUp" from="CanvasLayer/giftAPointLabel" to="CanvasLayer/PointLabel" method="_on_gift_a_point_label_gift_apoint_up"]
 [connection signal="complete_giftB" from="CanvasLayer/giftBPointLabel" to="Player1" method="_on_gift_b_point_label_complete_gift_b"]
@@ -1100,5 +1112,15 @@ autoplay = true
 [connection signal="body_entered" from="GiftBBox" to="Gifts/GiftB1" method="_on_gift_b_box_body_entered"]
 [connection signal="body_entered" from="GiftCBox" to="Gifts/GiftC1" method="_on_gift_c_box_body_entered"]
 [connection signal="body_entered" from="GiftCBox" to="Gifts/GiftC1" method="_on_red_box_body_entered"]
+[connection signal="complete_animate1" from="Deer1" to="Deer1" method="_on_complete_animate_1"]
+[connection signal="complete_animate1" from="Deer2" to="Deer2" method="_on_complete_animate_1"]
+[connection signal="complete_animate1" from="Deer3" to="Deer3" method="_on_complete_animate_1"]
+[connection signal="complete_animate1" from="Deer4" to="Deer4" method="_on_complete_animate_1"]
+[connection signal="complete_animate1" from="Deer5" to="Deer5" method="_on_complete_animate_1"]
 [connection signal="body_entered" from="FinishArea" to="Player1" method="_on_finish_area_body_entered"]
+[connection signal="resquePrison1" from="Player1" to="Deer1" method="_on_player_1_resque_prison_1"]
+[connection signal="resquePrison2" from="Player1" to="Deer2" method="_on_player_1_resque_prison_2"]
+[connection signal="resquePrison3" from="Player1" to="Deer3" method="_on_player_1_resque_prison_3"]
+[connection signal="resquePrison4" from="Player1" to="Deer4" method="_on_player_1_resque_prison_4"]
+[connection signal="resquePrison5" from="Player1" to="Deer5" method="_on_player_1_resque_prison_5"]
 [connection signal="rudolph_rescued" from="Player1" to="CanvasLayer/PointLabel" method="_on_player_1_rudolph_rescued"]
