@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://coq7wsmxvqnl4"]
+[gd_scene load_steps=37 format=3 uid="uid://coq7wsmxvqnl4"]
 
 [ext_resource type="PackedScene" uid="uid://c6m2oq7p4w3es" path="res://map/level1_map.tscn" id="1_ncw1r"]
 [ext_resource type="Texture2D" uid="uid://c4aqbth7m6l2p" path="res://tilemap_asset/16x16/kenney_tiny-ski/Tilemap/tilemap_packed.png" id="2_0w0rv"]
@@ -6,19 +6,20 @@
 [ext_resource type="Script" path="res://label/giftBPointLabel.gd" id="4_ojdoh"]
 [ext_resource type="FontFile" uid="uid://b4kp287dkplub" path="res://Assets/DungGeunMo.otf" id="4_w52rw"]
 [ext_resource type="Script" path="res://label/giftCPointLabel.gd" id="6_4ao6h"]
-[ext_resource type="Texture2D" uid="uid://4t0o72b3l23t" path="res://image/deer.png" id="6_rnri0"]
 [ext_resource type="PackedScene" uid="uid://c448hd5e21k6c" path="res://prison/prison.tscn" id="7_m0rf1"]
 [ext_resource type="Script" path="res://label/PointLabel.gd" id="8_2vkl5"]
-[ext_resource type="Texture2D" uid="uid://bnpk074oe2vy0" path="res://image/yellowbox.png" id="9_21vf0"]
 [ext_resource type="PackedScene" uid="uid://drt65dvrqucg2" path="res://gift/giftC1.tscn" id="9_ehcnq"]
-[ext_resource type="Texture2D" uid="uid://ba0q07sxspbsj" path="res://image/greenbox.png" id="10_1dusf"]
-[ext_resource type="Texture2D" uid="uid://dap7p3ejeyt2j" path="res://image/graybox.png" id="11_o7bhx"]
 [ext_resource type="Script" path="res://giftbox/giftABox.gd" id="12_32fx4"]
 [ext_resource type="PackedScene" uid="uid://q7sp5k24te61" path="res://prison/interaction_manager.tscn" id="12_favbd"]
+[ext_resource type="Texture2D" uid="uid://c80spr0qemryp" path="res://image/pinkchimney.png" id="12_n3nnq"]
 [ext_resource type="Script" path="res://giftbox/giftCBox.gd" id="13_8eej8"]
 [ext_resource type="PackedScene" uid="uid://5l4esc5rjrju" path="res://gift/giftA1.tscn" id="14_auglw"]
+[ext_resource type="Texture2D" uid="uid://bi65j25nmian3" path="res://image/greenchimney.png" id="14_dpcsn"]
 [ext_resource type="Script" path="res://giftbox/giftBBox.gd" id="16_d6uqu"]
+[ext_resource type="Texture2D" uid="uid://b4sq454jwuihq" path="res://image/orangechimney.png" id="16_s4jy2"]
+[ext_resource type="Texture2D" uid="uid://br5is1oux4a5c" path="res://image/rudolph_crying.png" id="17_nrxcq"]
 [ext_resource type="PackedScene" uid="uid://bvxjtlywx0kus" path="res://gift/giftB1.tscn" id="19_gqvql"]
+[ext_resource type="Texture2D" uid="uid://c8sbdd0df4s4g" path="res://image/door.png" id="20_sdwhl"]
 [ext_resource type="PackedScene" uid="uid://kyi7t88opsbw" path="res://player/Player1.tscn" id="26_4e378"]
 [ext_resource type="PackedScene" uid="uid://bqnj70b5dui6m" path="res://enemy_patrol/patrol1.tscn" id="27_6dtuc"]
 [ext_resource type="PackedScene" uid="uid://dno3uobook8d6" path="res://enemy_patrol/patrol2.tscn" id="28_c1j72"]
@@ -572,16 +573,16 @@ texture = ExtResource("2_0w0rv")
 sources/0 = SubResource("TileSetAtlasSource_vtj1e")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bfto7"]
-size = Vector2(95.8334, 95.8336)
+size = Vector2(91.6642, 95.4519)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0jwl8"]
-size = Vector2(111.111, 112.5)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ujv1h"]
+size = Vector2(168.055, 173.611)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1kho7"]
-size = Vector2(138.889, 140.278)
+size = Vector2(166.667, 173.076)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kufty"]
-size = Vector2(82.0478, 34.1755)
+size = Vector2(43.0848, 35.2392)
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(520, 3426)
@@ -605,7 +606,7 @@ position = Vector2(1056.94, 1111.11)
 scale = Vector2(2.93107, 2.93107)
 tile_set = SubResource("TileSet_ru0f7")
 format = 2
-layer_0/tile_data = PackedInt32Array(1, 393216, 9, 2, 458752, 9, 3, 0, 8, 4, 327680, 9, 5, 458752, 9, 6, 131072, 10, -7536735, 327680, 8, -7536734, 524288, 8, -7536733, 65536, 9, -7536732, 524288, 8, -7536731, 393216, 9, -7536730, 458752, 8, -7536729, 131072, 10)
+layer_0/tile_data = PackedInt32Array(0, 196608, 8, 1, 262144, 8, 2, 720896, 8, 3, 524288, 8, 4, 589824, 9, 5, 262144, 8, 6, 327680, 9, 65537, 458752, 8, 65536, 458752, 9, 65538, 262144, 8, 65540, 196608, 9, 65541, 327680, 9, 65542, 262144, 8, 65543, 393216, 9, 65544, 262144, 8, 65545, 65536, 9, 65546, 458752, 9, 65547, 393216, 9, 65548, 131072, 10)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -652,14 +653,15 @@ script = ExtResource("8_2vkl5")
 [node name="Gifts" type="Node" parent="."]
 
 [node name="GiftA1" parent="Gifts" groups=["gift"] instance=ExtResource("14_auglw")]
-position = Vector2(1496, 4090)
+position = Vector2(1650, 4086)
+collision_mask = 539
 mass = 5.0
 linear_damp = 5.0
 
 [node name="GiftB1" parent="Gifts" groups=["gift"] instance=ExtResource("19_gqvql")]
 position = Vector2(-14, 1589)
 collision_layer = 32
-collision_mask = 99
+collision_mask = 611
 mass = 3.0
 gravity_scale = 0.0
 linear_damp = 5.0
@@ -667,13 +669,13 @@ linear_damp = 5.0
 [node name="GiftC1" parent="Gifts" groups=["gift"] instance=ExtResource("9_ehcnq")]
 position = Vector2(195, 3435)
 collision_layer = 128
-collision_mask = 387
+collision_mask = 899
 mass = 3.0
 gravity_scale = 0.0
 linear_damp = 5.0
 
 [node name="GiftABox" type="Area2D" parent="."]
-position = Vector2(1941.67, -394.445)
+position = Vector2(1915.28, -402.777)
 scale = Vector2(0.591375, 0.591375)
 collision_layer = 16
 collision_mask = 8
@@ -681,48 +683,51 @@ script = ExtResource("12_32fx4")
 
 [node name="GiftABox" type="Sprite2D" parent="GiftABox"]
 position = Vector2(0, 0.000488281)
-texture = ExtResource("9_21vf0")
+scale = Vector2(0.248456, 0.248456)
+texture = ExtResource("12_n3nnq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GiftABox"]
-position = Vector2(-0.00439453, -2.34717)
-scale = Vector2(2.25472, 2.25472)
+position = Vector2(-3.52881, 4.69824)
+scale = Vector2(3.10021, 3.10021)
 shape = SubResource("RectangleShape2D_bfto7")
 
 [node name="GiftBBox" type="Area2D" parent="."]
-position = Vector2(116.667, -2372.22)
+position = Vector2(123.611, -2305.56)
 collision_layer = 64
 collision_mask = 33
 script = ExtResource("16_d6uqu")
 
 [node name="GiftBBox" type="Sprite2D" parent="GiftBBox"]
 position = Vector2(4.16669, 11.1108)
-scale = Vector2(0.645956, 0.645956)
-texture = ExtResource("10_1dusf")
+scale = Vector2(0.146, 0.146)
+texture = ExtResource("14_dpcsn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GiftBBox"]
-position = Vector2(5.55554, 13.1941)
-scale = Vector2(1, 1.04209)
-shape = SubResource("RectangleShape2D_0jwl8")
+position = Vector2(2.08331, 14.5833)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_ujv1h")
 
 [node name="GiftCBox" type="Area2D" parent="."]
-position = Vector2(-366.667, -83.3335)
+position = Vector2(-343.056, -61.1108)
 collision_layer = 256
 collision_mask = 129
 script = ExtResource("13_8eej8")
 
 [node name="GiftCBox" type="Sprite2D" parent="GiftCBox"]
 position = Vector2(455.322, -388.139)
-scale = Vector2(0.810671, 0.810671)
-texture = ExtResource("11_o7bhx")
+rotation = -3.14159
+scale = Vector2(0.146, 0.146)
+texture = ExtResource("16_s4jy2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GiftCBox"]
-position = Vector2(458.099, -388.833)
+position = Vector2(456.944, -392.093)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_1kho7")
 
 [node name="Deer1" type="Sprite2D" parent="."]
 position = Vector2(-2250, 477.778)
 scale = Vector2(0.113966, 0.113966)
-texture = ExtResource("6_rnri0")
+texture = ExtResource("17_nrxcq")
 
 [node name="Prison" parent="." instance=ExtResource("7_m0rf1")]
 position = Vector2(-2240.28, 484.722)
@@ -731,7 +736,7 @@ scale = Vector2(1.38889, 1.38889)
 [node name="Deer2" type="Sprite2D" parent="."]
 position = Vector2(-2796.54, -880.32)
 scale = Vector2(0.113966, 0.113966)
-texture = ExtResource("6_rnri0")
+texture = ExtResource("17_nrxcq")
 
 [node name="Prison2" parent="." instance=ExtResource("7_m0rf1")]
 position = Vector2(-2786.82, -873.375)
@@ -740,7 +745,7 @@ scale = Vector2(1.38889, 1.38889)
 [node name="Deer3" type="Sprite2D" parent="."]
 position = Vector2(-1231.26, -474.764)
 scale = Vector2(0.113966, 0.113966)
-texture = ExtResource("6_rnri0")
+texture = ExtResource("17_nrxcq")
 
 [node name="Prison3" parent="." instance=ExtResource("7_m0rf1")]
 position = Vector2(-1221.54, -467.819)
@@ -749,7 +754,7 @@ scale = Vector2(1.38889, 1.38889)
 [node name="Deer4" type="Sprite2D" parent="."]
 position = Vector2(-1352.1, -3678.93)
 scale = Vector2(0.113966, 0.113966)
-texture = ExtResource("6_rnri0")
+texture = ExtResource("17_nrxcq")
 
 [node name="Prison4" parent="." instance=ExtResource("7_m0rf1")]
 position = Vector2(-1342.37, -3671.98)
@@ -758,7 +763,7 @@ scale = Vector2(1.38889, 1.38889)
 [node name="Deer5" type="Sprite2D" parent="."]
 position = Vector2(1861.79, -3678.93)
 scale = Vector2(0.113966, 0.113966)
-texture = ExtResource("6_rnri0")
+texture = ExtResource("17_nrxcq")
 
 [node name="Prison5" parent="." instance=ExtResource("7_m0rf1")]
 position = Vector2(1871.51, -3671.98)
@@ -767,21 +772,26 @@ scale = Vector2(1.38889, 1.38889)
 [node name="InteractionManager" parent="." instance=ExtResource("12_favbd")]
 
 [node name="FinishArea" type="Area2D" parent="."]
-position = Vector2(-3312.5, -4243.06)
+position = Vector2(-3031.94, -4255.56)
 collision_layer = 512
 
+[node name="Sprite2D" type="Sprite2D" parent="FinishArea"]
+scale = Vector2(0.333333, 0.333333)
+texture = ExtResource("20_sdwhl")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FinishArea"]
-position = Vector2(295.139, 17.3607)
+position = Vector2(1.38892, 46.5281)
 scale = Vector2(10.4445, 10.4445)
 shape = SubResource("RectangleShape2D_kufty")
 
 [node name="Player1" parent="." groups=["santa"] instance=ExtResource("26_4e378")]
 z_index = 2
-position = Vector2(1681.94, 918.055)
+position = Vector2(1879.17, 919.444)
 rotation = -0.00569615
 scale = Vector2(1.16699, 1.16699)
 
 [node name="patrol1" parent="." instance=ExtResource("27_6dtuc")]
+z_index = 2
 position = Vector2(-3291.67, -3863.89)
 
 [node name="path1" type="Node2D" parent="."]
@@ -823,6 +833,7 @@ position = Vector2(-3312.5, -3783.33)
 position = Vector2(-3288.89, -3858.33)
 
 [node name="patrol2" parent="." instance=ExtResource("28_c1j72")]
+z_index = 2
 position = Vector2(-325, -3072.22)
 
 [node name="path2" type="Node2D" parent="."]
@@ -900,6 +911,7 @@ position = Vector2(-1334.72, -2226.39)
 position = Vector2(-270.833, -2241.67)
 
 [node name="patrol3" parent="." instance=ExtResource("29_syki0")]
+z_index = 2
 position = Vector2(218.056, 523.611)
 
 [node name="path3" type="Node2D" parent="."]
@@ -941,6 +953,7 @@ position = Vector2(-1723.61, 461.111)
 position = Vector2(262.5, 476.389)
 
 [node name="patrol4" parent="." instance=ExtResource("31_7ddeq")]
+z_index = 2
 position = Vector2(-2815.28, -1852.78)
 
 [node name="path4" type="Node2D" parent="."]
@@ -982,6 +995,7 @@ position = Vector2(-2790.28, -1326.39)
 position = Vector2(-2797.22, -1823.61)
 
 [node name="patrol5" parent="." instance=ExtResource("32_kcllh")]
+z_index = 2
 position = Vector2(880.555, -295.833)
 
 [node name="path5" type="Node2D" parent="."]
@@ -1011,6 +1025,7 @@ position = Vector2(1048.61, -347.222)
 position = Vector2(680.555, -552.778)
 
 [node name="patrol6" parent="." instance=ExtResource("33_nqbdf")]
+z_index = 2
 position = Vector2(1030.56, -2730.56)
 
 [node name="path6" type="Node2D" parent="."]
@@ -1043,7 +1058,7 @@ autoplay = true
 [connection signal="giftC_collected" from="Gifts/GiftC1" to="CanvasLayer/giftCPointLabel" method="_on_gift_c_1_gift_c_collected"]
 [connection signal="body_entered" from="GiftABox" to="Gifts/GiftA1" method="_on_gift_a_box_body_entered"]
 [connection signal="body_entered" from="GiftBBox" to="Gifts/GiftB1" method="_on_gift_b_box_body_entered"]
-[connection signal="body_entered" from="GiftCBox" to="Gifts/GiftC1" method="_on_red_box_body_entered"]
 [connection signal="body_entered" from="GiftCBox" to="Gifts/GiftC1" method="_on_gift_c_box_body_entered"]
+[connection signal="body_entered" from="GiftCBox" to="Gifts/GiftC1" method="_on_red_box_body_entered"]
 [connection signal="body_entered" from="FinishArea" to="Player1" method="_on_finish_area_body_entered"]
 [connection signal="rudolph_rescued" from="Player1" to="CanvasLayer/PointLabel" method="_on_player_1_rudolph_rescued"]
