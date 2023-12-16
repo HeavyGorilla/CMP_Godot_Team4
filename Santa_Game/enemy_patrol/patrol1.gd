@@ -9,8 +9,9 @@ var rotation_speed = 7.0  # 회전 속도 조절
 var path_nodes = [] # 묙표 노드 위치 저장 인덱
 var current_node_index = 0  # 현재 목표 노드 인덱스
 
-# 아래는 test용 변수
-#var move_timer = Timer.new()
+# Patrol Animation
+@onready var animation = $AnimatedSprite2D
+var facing_right = false  # 캐릭터가 오른쪽을 바라보고 있는지 여부
 
 func _ready():
 	if patrol_vision_scene:
@@ -23,12 +24,6 @@ func _ready():
 	for i in range(1, 13):
 		var node = get_node("../path1/Marker2D" + str(i))
 		path_nodes.append(node.position)
-
-	# test용 이동
-#	add_child(move_timer)
-#	move_timer.wait_time = 1  # n초마다 방향 변경
-#	move_timer.connect("timeout", Callable(self, "_on_move_timer_timeout"))
-#	move_timer.start()
 
 func _process(delta):
 	# 이동 로직
@@ -48,16 +43,18 @@ func _process(delta):
 			current_node_index = 0
 	else:
 		position += direction * move_step
-
+		
+	# Patrol AnimatedSprite2D direction
+	update_direction(direction)
+	
 	# 시야의 방향 업데이트
 	if patrol_vision and velocity != Vector2.ZERO:
 		patrol_vision.global_position = global_position  # 경비병과 같은 위치로 설정
 		var direction_angle = atan2(velocity.y, velocity.x)
 		patrol_vision.rotation = lerp_angle(patrol_vision.rotation, direction_angle, rotation_speed * delta)
 
-# test용 이동 함수. 랜덤으로 이동. 시야의 방향 전환 확인용
-#func _on_move_timer_timeout():
-#	var random_direction = Vector2(randf() * 2 - 1, randf() * 2 - 1).normalized()
-#	velocity = random_direction * speed  # 속도 업데이트
-#func _physics_process(_delta):
-#	move_and_slide()
+# 캐릭터의 방향 업데이트
+func update_direction(direction: Vector2):
+	if direction.x != 0:
+		facing_right = direction.x > 0
+		animation.flip_h = facing_right  # 스프라이트 방향 변경
