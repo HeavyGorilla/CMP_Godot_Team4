@@ -14,6 +14,11 @@ var fire_pause_timer = 0.0
 var fire_timer = Timer.new()
 var patterns = ["pattern_to_player", "pattern_circle"] # "pattern_spiral"]
 
+# Boss Animation
+@onready var animation = $AnimatedSprite2D
+var facing_right = false  # 캐릭터가 오른쪽을 바라보고 있는지 여부
+
+
 func _ready():
 	# 이동 타이머 설정
 	add_child(move_timer)
@@ -30,6 +35,8 @@ func _ready():
 func _on_move_timer_timeout():
 	var random_direction = Vector2(randf() * 2 - 1, randf() * 2 - 1).normalized()
 	velocity = random_direction * speed  # 속도 업데이트
+	update_direction(random_direction)
+	animation.play("boss_walk")
 
 func _physics_process(delta):
 	$HealthBar.value = HP
@@ -41,6 +48,7 @@ func _physics_process(delta):
 			is_firing = false
 			fire_pause_timer = 0.0
 			velocity = Vector2(randf() * 2 - 1, randf() * 2 - 1).normalized() * speed
+			animation.play("boss_idle")
 	else:
 		move_and_slide()
 
@@ -49,6 +57,7 @@ func _on_fire_timer_timeout():
 	velocity = Vector2.ZERO  # 속도 0으로 설정
 	var pattern = patterns[randi() % patterns.size()]
 	call(pattern)
+	animation.play("boss_attack")
 
 # 탄막 패턴 관리
 # 1. 플레이어에게 발사
@@ -64,9 +73,11 @@ func pattern_to_player():
 	bullet_instance.speed = 1200  # 속도 = n 으로 설정
 	# 탄환의 데미지 조정
 	bullet_instance.damage = 20
+	# get Player position and set target direction
 	var target_direction = (get_player_position() - bullet_instance.global_position).normalized()
 	bullet_instance.set_direction(target_direction)
-
+	# set animation direction
+	update_direction(target_direction)
 
 func pattern_circle():
 	var bullet_count = 20
@@ -107,6 +118,7 @@ func get_player_position() -> Vector2:
 # Damage Logic
 func take_damage(damage_amount):
 	HP -= damage_amount
+	animation.play("boss_hurt")
 	if HP <= 0:
 		die()
 		get_tree().change_scene_to_file("res://Game/stage2clear.tscn")
@@ -114,3 +126,9 @@ func take_damage(damage_amount):
 func die():
 	# 보스 사망 처리 로직
 	queue_free()
+
+# 캐릭터의 방향 업데이트
+func update_direction(direction: Vector2):
+	if direction.x != 0:
+		facing_right = direction.x > 0
+		animation.flip_h = facing_right  # 스프라이트 방향 변경
