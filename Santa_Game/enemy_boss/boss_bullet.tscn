@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://cka3e7s4fq3yb"]
 
 [ext_resource type="Script" path="res://enemy_boss/boss_bullet.gd" id="1_42ttf"]
-[ext_resource type="Texture2D" uid="uid://deea8rg7gt5n5" path="res://icon.svg" id="2_m7o4c"]
+[ext_resource type="Texture2D" uid="uid://crxu86ryh77aq" path="res://enemy_boss/boss_sprite/boss_bullet.png" id="2_pxmq7"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rq84g"]
-size = Vector2(32, 32)
+[sub_resource type="CircleShape2D" id="CircleShape2D_5udd0"]
+radius = 18.0
 
 [node name="boss_bullet" type="Area2D"]
 collision_layer = 512
@@ -12,11 +12,10 @@ collision_mask = 1027
 script = ExtResource("1_42ttf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0, 0, 0, 1)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_m7o4c")
+scale = Vector2(0.363281, 0.363281)
+texture = ExtResource("2_pxmq7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_rq84g")
+shape = SubResource("CircleShape2D_5udd0")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
