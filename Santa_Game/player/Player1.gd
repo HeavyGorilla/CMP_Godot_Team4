@@ -1,6 +1,11 @@
 extends CharacterBody2D
 
 class_name santa
+signal resquePrison1
+signal resquePrison2
+signal resquePrison3
+signal resquePrison4
+signal resquePrison5
 
 @onready var animated_sprite = $AnimatedSprite2D
 var giftpoints = 0
@@ -97,5 +102,14 @@ func _on_area_2d_area_exited(area):
 func _input(event):
 	if touched_rudolph != null and event.is_action_pressed("rescue"):
 		emit_signal("rudolph_rescued")
-		print("루돌프 구출")
+		if touched_rudolph == $"../Prison":
+			emit_signal("resquePrison1")
+		if touched_rudolph == $"../Prison2":
+			emit_signal("resquePrison2")
+		if touched_rudolph == $"../Prison3":
+			emit_signal("resquePrison3")
+		if touched_rudolph == $"../Prison4":
+			emit_signal("resquePrison4")
+		if touched_rudolph == $"../Prison5":
+			emit_signal("resquePrison5")
 		touched_rudolph.queue_free()
