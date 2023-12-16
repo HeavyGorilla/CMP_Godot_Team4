@@ -1,0 +1,1 @@
+Boss Animation Sprite Sheet
