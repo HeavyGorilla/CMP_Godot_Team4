@@ -1,7 +1,8 @@
-[gd_scene load_steps=45 format=3 uid="uid://coq7wsmxvqnl4"]
+[gd_scene load_steps=46 format=3 uid="uid://coq7wsmxvqnl4"]
 
 [ext_resource type="PackedScene" uid="uid://c6m2oq7p4w3es" path="res://map/level1_map.tscn" id="1_ncw1r"]
 [ext_resource type="Texture2D" uid="uid://c4aqbth7m6l2p" path="res://tilemap_asset/16x16/kenney_tiny-ski/Tilemap/tilemap_packed.png" id="2_0w0rv"]
+[ext_resource type="PackedScene" uid="uid://cobe4kjjssqqg" path="res://map/level_1_deco.tscn" id="2_htkx7"]
 [ext_resource type="Script" path="res://label/giftAPointLabel.gd" id="3_cvem1"]
 [ext_resource type="Script" path="res://label/giftBPointLabel.gd" id="4_ojdoh"]
 [ext_resource type="FontFile" uid="uid://b4kp287dkplub" path="res://Assets/DungGeunMo.otf" id="4_w52rw"]
@@ -601,6 +602,9 @@ metadata/_edit_horizontal_guides_ = []
 position = Vector2(-2206.94, -2372.22)
 scale = Vector2(1.358, 1.332)
 
+[node name="level1_deco" parent="." instance=ExtResource("2_htkx7")]
+scale = Vector2(1, 1)
+
 [node name="obstacle" type="TileMap" parent="."]
 visible = false
 position = Vector2(1176, 376)
@@ -1098,8 +1102,6 @@ stream = ExtResource("33_bikng")
 autoplay = true
 max_distance = 2e+06
 
-[node name="Timer" type="Timer" parent="."]
-
 [connection signal="complete_giftA" from="CanvasLayer/giftAPointLabel" to="Player1" method="_on_gift_a_point_label_complete_gift_a"]
 [connection signal="giftApointUp" from="CanvasLayer/giftAPointLabel" to="CanvasLayer/PointLabel" method="_on_gift_a_point_label_gift_apoint_up"]
 [connection signal="complete_giftB" from="CanvasLayer/giftBPointLabel" to="Player1" method="_on_gift_b_point_label_complete_gift_b"]
@@ -1120,4 +1122,9 @@ max_distance = 2e+06
 [connection signal="complete_animate1" from="Deer4" to="Deer4" method="_on_complete_animate_1"]
 [connection signal="complete_animate1" from="Deer5" to="Deer5" method="_on_complete_animate_1"]
 [connection signal="body_entered" from="FinishArea" to="Player1" method="_on_finish_area_body_entered"]
+[connection signal="resquePrison1" from="Player1" to="Deer1" method="_on_player_1_resque_prison_1"]
+[connection signal="resquePrison2" from="Player1" to="Deer2" method="_on_player_1_resque_prison_2"]
+[connection signal="resquePrison3" from="Player1" to="Deer3" method="_on_player_1_resque_prison_3"]
+[connection signal="resquePrison4" from="Player1" to="Deer4" method="_on_player_1_resque_prison_4"]
+[connection signal="resquePrison5" from="Player1" to="Deer5" method="_on_player_1_resque_prison_5"]
 [connection signal="rudolph_rescued" from="Player1" to="CanvasLayer/PointLabel" method="_on_player_1_rudolph_rescued"]
