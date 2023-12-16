@@ -4,7 +4,6 @@ class_name santa2
 
 @onready var ray_cast = $RayCast2D
 @export var ammo : PackedScene
-var enemy
 @onready var animated_sprite = $AnimatedSprite2D
 var giftpoints = 0
 
@@ -142,7 +141,4 @@ func _on_reload_timer_timeout():
 
 func take_damage(damage):
 	health -= damage
-	
-	if health <= 0:
-		get_tree().change_scene_to_file("res://Game/gameover.tscn")
 	

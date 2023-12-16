@@ -29,7 +29,7 @@ _data = {
 }
 
 [node name="Bullet" type="Area2D"]
-collision_mask = 1022
+collision_mask = 4094
 script = ExtResource("1_ml1ie")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

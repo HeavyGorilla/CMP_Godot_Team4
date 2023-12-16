@@ -157,7 +157,7 @@ radius = 39.0
 height = 142.0
 
 [node name="Player2" type="CharacterBody2D"]
-collision_mask = 514
+collision_mask = 3586
 script = ExtResource("1_3h6iw")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
@@ -222,6 +222,4 @@ position = Vector2(5, 0)
 scale = Vector2(1.08, 0.960001)
 shape = SubResource("CapsuleShape2D_it6jm")
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
 [connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]
