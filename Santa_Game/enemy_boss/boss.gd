@@ -119,6 +119,7 @@ func get_player_position() -> Vector2:
 func take_damage(damage_amount):
 	HP -= damage_amount
 	animation.play("boss_hurt")
+	$AudioStreamPlayer2D2.play()
 	$AudioStreamPlayer2D.play()
 	if HP <= 0:
 		die()

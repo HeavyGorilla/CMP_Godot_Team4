@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://daauel5h0c1te"]
+[gd_scene load_steps=8 format=3 uid="uid://daauel5h0c1te"]
 
 [ext_resource type="Script" path="res://enemy_boss/boss.gd" id="1_fpqwf"]
 [ext_resource type="SpriteFrames" uid="uid://mgryubiy510a" path="res://enemy_boss/boss_sprite/boss_animation.tres" id="2_8rp4i"]
 [ext_resource type="Texture2D" uid="uid://biov3uroqsca" path="res://Assets/lifebar_bg.png" id="3_qttko"]
 [ext_resource type="Texture2D" uid="uid://ctmu8msw6qeo5" path="res://Assets/lifebar_fill.png" id="4_nctbs"]
 [ext_resource type="AudioStream" uid="uid://sgv7vfaowokv" path="res://Assets/hitsound.mp3" id="5_fggul"]
+[ext_resource type="AudioStream" uid="uid://tqyshoxxrp5g" path="res://Assets/bosshurt.wav" id="6_7lc5y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_58jsn"]
 size = Vector2(72, 91)
@@ -40,3 +41,7 @@ tint_progress = Color(0.984314, 0, 0.168627, 1)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_fggul")
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_7lc5y")
+volume_db = 10.0
