@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://c6wlfn7b4siue"]
+[gd_scene load_steps=32 format=3 uid="uid://c6wlfn7b4siue"]
 
 [ext_resource type="Script" path="res://player/Player.gd" id="1_3h6iw"]
 [ext_resource type="Texture2D" uid="uid://dkwhttpx5n8i3" path="res://Assets/down1.png" id="3_6s5nf"]
@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://dtxs3idqny6sn" path="res://Assets/upwalk2.png" id="27_7gwwx"]
 [ext_resource type="Texture2D" uid="uid://biov3uroqsca" path="res://Assets/lifebar_bg.png" id="28_a1s3s"]
 [ext_resource type="Texture2D" uid="uid://ctmu8msw6qeo5" path="res://Assets/lifebar_fill.png" id="29_8b4q5"]
+[ext_resource type="AudioStream" uid="uid://d0iiw0djt57ar" path="res://Assets/Ough-sound-effect.mp3" id="29_dio6e"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p7as1"]
 animations = [{
@@ -221,5 +222,8 @@ texture_progress = ExtResource("29_8b4q5")
 position = Vector2(5, 0)
 scale = Vector2(1.08, 0.960001)
 shape = SubResource("CapsuleShape2D_it6jm")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("29_dio6e")
 
 [connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]

@@ -140,6 +140,7 @@ func _on_reload_timer_timeout():
 	can_shoot = true
 
 func take_damage(damage):
+	$AudioStreamPlayer2D.play()
 	health -= damage
 	
 	if health <= 0:
