@@ -1,13 +1,14 @@
-[gd_scene load_steps=15 format=3 uid="uid://b3e4udemf7jow"]
+[gd_scene load_steps=16 format=3 uid="uid://b3e4udemf7jow"]
 
 [ext_resource type="Texture2D" uid="uid://b2ik7njwnesjd" path="res://tilemap_asset/16x16/Tilesets/Solaria Demo Update 01.png" id="1_doqah"]
+[ext_resource type="Script" path="res://level/Level2.gd" id="1_ue0eg"]
 [ext_resource type="Texture2D" uid="uid://c4aqbth7m6l2p" path="res://tilemap_asset/16x16/kenney_tiny-ski/Tilemap/tilemap_packed.png" id="2_wgd84"]
 [ext_resource type="Texture2D" uid="uid://cvn4u8shjigal" path="res://tilemap_asset/16x16/kenney_tiny-battle/Tilemap/tilemap_packed.png" id="3_x0d3y"]
 [ext_resource type="PackedScene" uid="uid://c6wlfn7b4siue" path="res://player/Player2.tscn" id="6_0lfwi"]
 [ext_resource type="Script" path="res://level/main2.gd" id="6_0w3yr"]
 [ext_resource type="PackedScene" uid="uid://dc7hpubkax2g0" path="res://player/Bullet.tscn" id="6_lgcn6"]
 [ext_resource type="Texture2D" uid="uid://m4m3npv05luf" path="res://Assets/crosshair.png" id="8_ptltf"]
-[ext_resource type="PackedScene" uid="uid://cx653js0ld08t" path="res://enemy_boss/boss.tscn" id="9_hgloh"]
+[ext_resource type="PackedScene" uid="uid://daauel5h0c1te" path="res://enemy_boss/boss.tscn" id="9_hgloh"]
 [ext_resource type="AudioStream" uid="uid://dn7qgvtc0n27j" path="res://Assets/stage2music.mp3" id="10_ni403"]
 [ext_resource type="PackedScene" uid="uid://b67gd2sayaxds" path="res://map/tree.tscn" id="10_ro1wt"]
 
@@ -2145,6 +2146,7 @@ sources/2 = SubResource("TileSetAtlasSource_pafyx")
 sources/3 = SubResource("TileSetAtlasSource_b0ict")
 
 [node name="Level2" type="Node2D"]
+script = ExtResource("1_ue0eg")
 
 [node name="background" type="TileMap" parent="."]
 position = Vector2(-2050, -713.888)

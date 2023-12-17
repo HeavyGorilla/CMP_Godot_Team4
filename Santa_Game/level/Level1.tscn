@@ -1,6 +1,7 @@
-[gd_scene load_steps=45 format=3 uid="uid://coq7wsmxvqnl4"]
+[gd_scene load_steps=46 format=3 uid="uid://coq7wsmxvqnl4"]
 
 [ext_resource type="PackedScene" uid="uid://c6m2oq7p4w3es" path="res://map/level1_map.tscn" id="1_ncw1r"]
+[ext_resource type="Script" path="res://level/Level1.gd" id="1_ox58s"]
 [ext_resource type="Texture2D" uid="uid://c4aqbth7m6l2p" path="res://tilemap_asset/16x16/kenney_tiny-ski/Tilemap/tilemap_packed.png" id="2_0w0rv"]
 [ext_resource type="PackedScene" uid="uid://cobe4kjjssqqg" path="res://map/level_1_deco.tscn" id="2_htkx7"]
 [ext_resource type="Script" path="res://label/giftAPointLabel.gd" id="3_cvem1"]
@@ -595,6 +596,7 @@ size = Vector2(43.0848, 35.2392)
 [node name="Node2D" type="Node2D"]
 position = Vector2(520, 3426)
 scale = Vector2(0.72, 0.72)
+script = ExtResource("1_ox58s")
 metadata/_edit_horizontal_guides_ = []
 
 [node name="level1_map2" parent="." instance=ExtResource("1_ncw1r")]
