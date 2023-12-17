@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://bqk3cxl45t0v0"]
+[gd_scene load_steps=9 format=3 uid="uid://bqk3cxl45t0v0"]
 
+[ext_resource type="Script" path="res://Game/gameover.gd" id="1_enwnn"]
 [ext_resource type="Texture2D" uid="uid://cjuca8oey0u6d" path="res://Assets/gameover.png" id="1_jb4a4"]
 [ext_resource type="Script" path="res://Game/Retry.gd" id="2_sf3kf"]
 [ext_resource type="Script" path="res://Game/Quit.gd" id="3_8r1yx"]
@@ -15,6 +16,7 @@ size = Vector2(320, 127)
 size = Vector2(320, 127)
 
 [node name="gameover" type="StaticBody2D"]
+script = ExtResource("1_enwnn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(800, 450)
