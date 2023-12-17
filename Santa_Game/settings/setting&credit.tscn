@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://c3mrkdvi1a8np"]
+[gd_scene load_steps=8 format=3 uid="uid://c3mrkdvi1a8np"]
 
 [ext_resource type="Texture2D" uid="uid://c0fkkntthsub3" path="res://Assets/settings.png" id="1_jogc1"]
 [ext_resource type="Script" path="res://settings/Area2D.gd" id="2_wcpsa"]
+[ext_resource type="Script" path="res://settings/Area2D2.gd" id="3_bleds"]
+[ext_resource type="Script" path="res://settings/Area2D3.gd" id="4_rjsqm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gem4l"]
 size = Vector2(1610, 906)
@@ -9,11 +11,8 @@ size = Vector2(1610, 906)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d71cp"]
 size = Vector2(64, 64)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pavm4"]
-size = Vector2(488.25, 112)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_07ny3"]
-size = Vector2(488.25, 112)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0pmof"]
+size = Vector2(437.5, 98.5)
 
 [node name="settingcontent" type="StaticBody2D"]
 
@@ -33,16 +32,20 @@ script = ExtResource("2_wcpsa")
 position = Vector2(1532, 70)
 shape = SubResource("RectangleShape2D_d71cp")
 
-[node name="voulmn down" type="Area2D" parent="."]
+[node name="Area2D2" type="Area2D" parent="."]
+script = ExtResource("3_bleds")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="voulmn down"]
-position = Vector2(510, 373)
-shape = SubResource("RectangleShape2D_pavm4")
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(528.25, 369.75)
+shape = SubResource("RectangleShape2D_0pmof")
 
-[node name="volumn up" type="Area2D" parent="."]
+[node name="Area2D3" type="Area2D" parent="."]
+script = ExtResource("4_rjsqm")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="volumn up"]
-position = Vector2(1067, 373)
-shape = SubResource("RectangleShape2D_07ny3")
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D3"]
+position = Vector2(1050, 366)
+shape = SubResource("RectangleShape2D_0pmof")
 
 [connection signal="input_event" from="Area2D" to="Area2D" method="_on_input_event"]
+[connection signal="input_event" from="Area2D2" to="Area2D2" method="_on_input_event"]
+[connection signal="input_event" from="Area2D3" to="Area2D3" method="_on_input_event"]
