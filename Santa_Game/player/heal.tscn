@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://biuuq0d4tq1r"]
+
+[ext_resource type="Texture2D" uid="uid://irg7c1bccohc" path="res://Assets/heal.png" id="1_lv75r"]
+[ext_resource type="Script" path="res://player/heal.gd" id="1_vnw0j"]
+[ext_resource type="AudioStream" uid="uid://b2f40igdgcrr8" path="res://Assets/heal-up-39285.mp3" id="3_yvdjp"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sgndh"]
+
+[node name="heal" type="Area2D"]
+script = ExtResource("1_vnw0j")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3.5, 8.5)
+scale = Vector2(1.43333, 1.76667)
+texture = ExtResource("1_lv75r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_sgndh")
+
+[node name="heal" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(1166, 466)
+rotation = 3.14159
+scale = Vector2(1279.46, 56.4135)
+stream = ExtResource("3_yvdjp")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

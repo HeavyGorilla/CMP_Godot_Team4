@@ -17,6 +17,7 @@ func _on_body_entered(body):
 		body.take_damage(damage)
 		
 	$AnimationPlayer.play("new_animation")
+	$AudioStreamPlayer2D.play()
 	$AnimationPlayer.connect("animation_finished", Callable(self, "_on_animation_finished"))
 		
 

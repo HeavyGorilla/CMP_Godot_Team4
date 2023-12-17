@@ -28,15 +28,16 @@ var energy_per_Rudolf = 33
 
 # health
 var health = 100
-
+var speed = 450
 func _ready():
 	animated_sprite.connect("animation_finished", Callable(self, "_on_AnimatedSprite2D_animation_finished"))
 
 func _physics_process(_delta):
+	print(speed)
 	$EnergyBar.value = charge
 	$HealthBar.value = health
 
-	velocity = Input.get_vector("left", "right", "up", "down") * 450
+	velocity = Input.get_vector("left", "right", "up", "down") * speed
 	move_and_slide()
 
 	if !is_interacting_with_box:
