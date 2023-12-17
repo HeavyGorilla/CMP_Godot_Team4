@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c3mrkdvi1a8np"]
+[gd_scene load_steps=7 format=3 uid="uid://c3mrkdvi1a8np"]
 
 [ext_resource type="Texture2D" uid="uid://c0fkkntthsub3" path="res://Assets/settings.png" id="1_jogc1"]
 [ext_resource type="Script" path="res://settings/Area2D.gd" id="2_wcpsa"]
@@ -8,6 +8,12 @@ size = Vector2(1610, 906)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d71cp"]
 size = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pavm4"]
+size = Vector2(488.25, 112)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_07ny3"]
+size = Vector2(488.25, 112)
 
 [node name="settingcontent" type="StaticBody2D"]
 
@@ -26,5 +32,17 @@ script = ExtResource("2_wcpsa")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(1532, 70)
 shape = SubResource("RectangleShape2D_d71cp")
+
+[node name="voulmn down" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="voulmn down"]
+position = Vector2(510, 373)
+shape = SubResource("RectangleShape2D_pavm4")
+
+[node name="volumn up" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="volumn up"]
+position = Vector2(1067, 373)
+shape = SubResource("RectangleShape2D_07ny3")
 
 [connection signal="input_event" from="Area2D" to="Area2D" method="_on_input_event"]
