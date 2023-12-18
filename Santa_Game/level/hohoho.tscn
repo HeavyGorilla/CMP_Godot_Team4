@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://vyjfmcc8aln4"]
+
+[ext_resource type="AudioStream" uid="uid://bxcdu2ct3jxj6" path="res://Assets/hohoho.mp3" id="1_ijeiw"]
+
+[node name="hohoho" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_ijeiw")
+max_distance = 2e+06

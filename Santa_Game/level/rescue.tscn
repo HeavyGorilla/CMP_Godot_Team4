@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqjf7ihvuyc0r"]
+
+[ext_resource type="AudioStream" uid="uid://dnjas2kgwk5ce" path="res://Assets/1.PointSound.wav" id="1_a4gac"]
+
+[node name="Rescue" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_a4gac")
+max_distance = 2e+06
