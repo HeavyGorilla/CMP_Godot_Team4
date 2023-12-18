@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://q7sp5k24te61"]
+[gd_scene load_steps=3 format=3 uid="uid://q7sp5k24te61"]
 
 [ext_resource type="Script" path="res://prison/interaction_manager.gd" id="1_6x1u7"]
+[ext_resource type="FontFile" uid="uid://b4kp287dkplub" path="res://Assets/DungGeunMo.otf" id="2_max1e"]
 
 [node name="InteractionManager" type="Node2D"]
 script = ExtResource("1_6x1u7")
@@ -18,6 +19,7 @@ offset_right = 75.5
 offset_bottom = 13.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_max1e")
 theme_override_font_sizes/font_size = 25
 text = "[SPACE] TO RESQUE"
 horizontal_alignment = 1
