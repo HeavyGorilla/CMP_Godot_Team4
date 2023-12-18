@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://blctwedh08n78"]
+[gd_scene load_steps=9 format=3 uid="uid://blctwedh08n78"]
 
+[ext_resource type="Script" path="res://Game/stage2clear.gd" id="1_6clik"]
 [ext_resource type="Texture2D" uid="uid://cc0nv5o5up2xg" path="res://Assets/stage2 clear.png" id="1_pkrnx"]
 [ext_resource type="Script" path="res://Game/Restart.gd" id="2_md7qp"]
 [ext_resource type="Script" path="res://Game/Quit.gd" id="3_ud0r1"]
@@ -15,6 +16,7 @@ size = Vector2(320, 127)
 size = Vector2(320, 127)
 
 [node name="stage2clear" type="StaticBody2D"]
+script = ExtResource("1_6clik")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(800, 450)

@@ -5,7 +5,6 @@ extends StaticBody2D
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	Stage1Music.stop()
-	Stage2Music.stop()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
