@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://b3e4udemf7jow"]
+[gd_scene load_steps=17 format=3 uid="uid://b3e4udemf7jow"]
 
 [ext_resource type="Texture2D" uid="uid://b2ik7njwnesjd" path="res://tilemap_asset/16x16/Tilesets/Solaria Demo Update 01.png" id="1_doqah"]
 [ext_resource type="Script" path="res://level/Level2.gd" id="1_ue0eg"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://dc7hpubkax2g0" path="res://player/Bullet.tscn" id="6_lgcn6"]
 [ext_resource type="Texture2D" uid="uid://m4m3npv05luf" path="res://Assets/crosshair.png" id="8_ptltf"]
 [ext_resource type="PackedScene" uid="uid://daauel5h0c1te" path="res://enemy_boss/boss.tscn" id="9_hgloh"]
-[ext_resource type="AudioStream" uid="uid://dn7qgvtc0n27j" path="res://Assets/stage2music.mp3" id="10_ni403"]
 [ext_resource type="PackedScene" uid="uid://b67gd2sayaxds" path="res://map/tree.tscn" id="10_ro1wt"]
 [ext_resource type="PackedScene" uid="uid://biuuq0d4tq1r" path="res://player/heal.tscn" id="12_upp15"]
 [ext_resource type="AudioStream" uid="uid://b2f40igdgcrr8" path="res://Assets/heal-up-39285.mp3" id="13_fjxrn"]
@@ -2188,12 +2187,6 @@ position = Vector2(-1080, -240)
 
 [node name="boss" parent="test_boss2" groups=["boss"] instance=ExtResource("9_hgloh")]
 position = Vector2(1024, 105)
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(-429, 165)
-stream = ExtResource("10_ni403")
-autoplay = true
-max_distance = 2e+06
 
 [node name="healsound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("13_fjxrn")
