@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://di4lwcd4c3hd"]
+[gd_scene load_steps=3 format=3 uid="uid://di4lwcd4c3hd"]
 
 [ext_resource type="AudioStream" uid="uid://cc7bccomtaa7p" path="res://Assets/stage1music.mp3" id="1_xva6e"]
+[ext_resource type="Script" path="res://level/stage1music.gd" id="2_wtnq6"]
 
 [node name="stage1music" type="AudioStreamPlayer2D"]
 stream = ExtResource("1_xva6e")
+volume_db = -10.0
+max_distance = 200000.0
+script = ExtResource("2_wtnq6")
