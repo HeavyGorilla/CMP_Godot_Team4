@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 InteractionManager="*res://prison/interaction_manager.tscn"
 Firstmusic="*res://firstpage/firstmusic.tscn"
 Stage1Music="*res://level/stage1music.tscn"
+Stage2Music="*res://level/stage2music.tscn"
 Hohoho="*res://level/hohoho.tscn"
 Rescue="*res://level/rescue.tscn"
 
