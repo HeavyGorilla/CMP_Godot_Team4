@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dhgphjrl812ip" path="res://image/deco_sled.png" id="5_0bh1s"]
 [ext_resource type="Texture2D" uid="uid://cf1xgellmthar" path="res://image/deco_tree.png" id="6_t7l3h"]
 [ext_resource type="Texture2D" uid="uid://dcif6j258ou8w" path="res://image/deco_snowman2.png" id="6_urepc"]
-[ext_resource type="Texture2D" uid="uid://y3y6u0lej0fy" path="res://image/deco_candle.png" id="7_spvam"]
+[ext_resource type="Texture2D" uid="uid://belmrptpb0vxj" path="res://image/deco_candle2.png" id="7_y56nl"]
 [ext_resource type="Texture2D" uid="uid://ba4a456rheac" path="res://image/deco_penguin.png" id="8_a88nl"]
 [ext_resource type="Texture2D" uid="uid://btwbt43lgdqpi" path="res://image/deco_holly.png" id="9_fwj80"]
 
@@ -2180,14 +2180,14 @@ scale = Vector2(0.634797, 0.634797)
 texture = ExtResource("6_urepc")
 
 [node name="candle" type="Sprite2D" parent="."]
-position = Vector2(1900.21, -1275.38)
+position = Vector2(1897, -1294)
 scale = Vector2(0.443815, 0.443815)
-texture = ExtResource("7_spvam")
+texture = ExtResource("7_y56nl")
 
 [node name="candle2" type="Sprite2D" parent="."]
-position = Vector2(-1830, 557)
+position = Vector2(-1813, 534)
 scale = Vector2(0.443815, 0.443815)
-texture = ExtResource("7_spvam")
+texture = ExtResource("7_y56nl")
 
 [node name="penguin" type="Sprite2D" parent="."]
 position = Vector2(-783, -1334)
