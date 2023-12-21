@@ -67,38 +67,47 @@ func _physics_process(_delta):
 			else:
 				animated_sprite.stop()
 
+# Increase giftpoints 1 when completing the first gift delivery
 func _on_gift_a_point_label_complete_gift_a():
 	giftpoints += 1
 
+# Increase giftpoints 1 when completing the second gift delivery
 func _on_gift_b_point_label_complete_gift_b():
 	giftpoints += 1
 
+# Increase giftpoints 1 when completing the third gift delivery
 func _on_gift_c_point_label_complete_gift_c():
 	giftpoints += 1
 
+# Move the scene when the player entered finish area and the giftpoint is 3 or more
 func _on_finish_area_body_entered(body):
 	if body is santa && giftpoints>=3:
 		get_tree().change_scene_to_file("res://Game/stage1clear.tscn")
 
+# When a gift enters the player area, interacting_with_gift = true
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("gift"):
 		is_interacting_with_gift = true
 
+# When a gift exits the player area, interacting_with_gift = false
 func _on_area_2d_body_exited(body):
 	if body.is_in_group("gift"):
 		is_interacting_with_gift = false
 
+# When entering a prison area, save it to touched_rudolph
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("prison"):
-		print("감옥 터치")
 		if touched_rudolph == null:
 			touched_rudolph = area
 
+# When exiting the prison area, empty out the touched_rudolph
 func _on_area_2d_area_exited(area):
 	if area.is_in_group("prison"):
 		if area == touched_rudolph:
 			touched_rudolph = null
-			
+
+# If touched_rudolph is not null and you press the spacebar
+# send a signal to the point label and Rudolph, and delete the prison stored in touched_rudolph
 func _input(event):
 	if touched_rudolph != null and event.is_action_pressed("rescue"):
 		emit_signal("rudolph_rescued")
