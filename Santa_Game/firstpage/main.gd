@@ -1,12 +1,11 @@
+#This GDScript is for mainpage backgroundmusic.
 extends StaticBody2D
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
+	#If Firstmusic is not currently playing start playing Firstmusic.
 	if Firstmusic.playing == false:
 		Firstmusic.play()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
