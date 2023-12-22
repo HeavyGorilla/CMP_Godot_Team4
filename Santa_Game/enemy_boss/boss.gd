@@ -1,6 +1,29 @@
+'''
+This script manages the behavior of the boss character and its bullet firing patterns in the game.
+
+1. Boss Character Properties Setup:
+	It sets attributes such as HP (Health Points), speed, bullet firing rate, and bullet firing patterns for the boss character.
+
+2. Boss Character Movement and Attack Logic:
+	The boss character's movement changes in random directions at regular intervals, and it does not fire bullets while moving.
+	There is a timer that periodically triggers bullet firing, and it randomly selects one of the predefined firing patterns to execute.
+
+3. Bullet Pattern Management:
+	It includes patterns like firing bullets toward the player character (pattern_to_player) and firing bullets in a circular pattern (pattern_circle). The spiral pattern is commented out and inactive.
+
+4. Player Position Retrieval:
+	It retrieves the position of the player character to be used in bullet firing patterns.
+
+5. Damage Handling:
+	The boss character can take damage, reducing its HP. When damaged, it plays related animations. If HP falls below zero, it triggers the boss's death (die) and transitions to the next stage.
+
+6. Direction Update:
+	It updates the character's direction, flipping the sprite's orientation when necessary.
+'''
+
 extends CharacterBody2D
 
-# 보스 설정
+# Boss settings
 @export var HP = 200
 @export var speed = 200
 var move_timer = Timer.new()
@@ -8,25 +31,25 @@ var is_firing = false
 var fire_pause_timer = 0.0
 @export var fire_pause_duration = 0.5
 
-# 탄막 설정
-@export var bullet_scene = preload("res://enemy_boss/boss_bullet.tscn")	# 보스 총알 scene 경로
+# For boss bullet settings
+@export var bullet_scene = preload("res://enemy_boss/boss_bullet.tscn")	# boss bullet scene path
 @export var fire_rate = 2.0
 var fire_timer = Timer.new()
 var patterns = ["pattern_to_player", "pattern_circle"] # "pattern_spiral"]
 
 # Boss Animation
 @onready var animation = $AnimatedSprite2D
-var facing_right = false  # 캐릭터가 오른쪽을 바라보고 있는지 여부
+var facing_right = false  # boss direction: is it facing right?
 
 
 func _ready():
-	# 이동 타이머 설정
+	# Move timer setup
 	add_child(move_timer)
-	move_timer.wait_time = 1  # n초마다 방향 변경
+	move_timer.wait_time = 1  # change direction in n seconds
 	move_timer.connect("timeout", Callable(self, "_on_move_timer_timeout"))
 	move_timer.start()
 
-	# 탄막 발사 타이머 설정
+	# Bullet firing timer setup
 	add_child(fire_timer)
 	fire_timer.wait_time = fire_rate
 	fire_timer.connect("timeout", Callable(self, "_on_fire_timer_timeout"))
@@ -34,7 +57,7 @@ func _ready():
 
 func _on_move_timer_timeout():
 	var random_direction = Vector2(randf() * 2 - 1, randf() * 2 - 1).normalized()
-	velocity = random_direction * speed  # 속도 업데이트
+	velocity = random_direction * speed  # Update Speed
 	update_direction(random_direction)
 	animation.play("boss_walk")
 
@@ -44,7 +67,7 @@ func _physics_process(delta):
 	if is_firing:
 		fire_pause_timer += delta
 		if fire_pause_timer >= fire_pause_duration:
-			# 일정 시간이 지난 후 보스의 움직임 복원
+			# Restore boss movement after a certain time
 			is_firing = false
 			fire_pause_timer = 0.0
 			velocity = Vector2(randf() * 2 - 1, randf() * 2 - 1).normalized() * speed
@@ -53,25 +76,25 @@ func _physics_process(delta):
 		move_and_slide()
 
 func _on_fire_timer_timeout():
-	is_firing = true  # 탄막 발사 중 정지 상태로 설정
-	velocity = Vector2.ZERO  # 속도 0으로 설정
+	is_firing = true  # Stop boss when firing
+	velocity = Vector2.ZERO
 	var pattern = patterns[randi() % patterns.size()]
 	call(pattern)
 	animation.play("boss_attack")
 
-# 탄막 패턴 관리
-# 1. 플레이어에게 발사
-# 2. 원형으로 발사
-# 3. 나선형으로 발사 -> 보류. maybe 다른 패턴으로 대체?
+# Bullet pattern management
+# 1. Fire toward the player
+# 2. Fire in a circular pattern
+# for test: Fire in a spiral pattern (on hold, may be replaced with another pattern)
 func pattern_to_player():
 	var bullet_instance = bullet_scene.instantiate()
-	get_parent().add_child(bullet_instance)  # 보스의 부모 노드에 탄환 추가 (보스의 위치 이동에 탄환이 영향 받지 않아야 함)
+	get_parent().add_child(bullet_instance)  # # Add the bullet to the boss's parent node (should not be affected by boss movement)
 	bullet_instance.global_position = global_position
-	# 탄환의 크기 조절
+	# Mod size of bullet
 	bullet_instance.scale = Vector2(2, 2)  # 원래 크기의 k배
-	# 탄환의 속도 설정
+	# Mod speed for bullet
 	bullet_instance.speed = 1200  # 속도 = n 으로 설정
-	# 탄환의 데미지 조정
+	# Mod bullet damage
 	bullet_instance.damage = 20
 	# get Player position and set target direction
 	var target_direction = (get_player_position() - bullet_instance.global_position).normalized()
@@ -126,11 +149,11 @@ func take_damage(damage_amount):
 		get_tree().change_scene_to_file("res://Game/stage2clear.tscn")
 
 func die():
-	# 보스 사망 처리 로직
+	# boss death
 	queue_free()
 
 # 캐릭터의 방향 업데이트
 func update_direction(direction: Vector2):
 	if direction.x != 0:
 		facing_right = direction.x > 0
-		animation.flip_h = facing_right  # 스프라이트 방향 변경
+		animation.flip_h = facing_right  # Change sprite direction
