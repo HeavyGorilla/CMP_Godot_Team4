@@ -1,4 +1,7 @@
 '''
+For 'boss' scene.
+The scene works similarly to the script.
+
 This script manages the behavior of the boss character and its bullet firing patterns in the game.
 
 1. Boss Character Properties Setup:
