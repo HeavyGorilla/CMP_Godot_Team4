@@ -32,7 +32,7 @@ func _process(delta):
 	var move_step = speed * delta
 
 
-	# Varies according to Patrol: range, path#
+	# Adjust the direction of view through velocity
 	var direction = (target_position - position).normalized()
 	velocity = direction * speed
 
