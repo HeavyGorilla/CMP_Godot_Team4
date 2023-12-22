@@ -5,7 +5,7 @@ var patrol_vision_scene = preload("res://enemy_patrol/patrol_vision.tscn")
 var patrol_vision
 var rotation_speed = 7.0  # Rotation speed of the 'patrol'
 
-# Path2D
+# Path of the patrol
 var path_nodes = [] # Index to store path node positions
 var current_node_index = 0  # Current target node index
 
@@ -48,7 +48,7 @@ func _process(delta):
 	
 	# Update the direction of 'patrol_vision'
 	if patrol_vision and velocity != Vector2.ZERO:
-		patrol_vision.global_position = global_position  # 경비병과 같은 위치로 설정
+		patrol_vision.global_position = global_position  # Set to the same position as the patrol
 		var direction_angle = atan2(velocity.y, velocity.x)
 		patrol_vision.rotation = lerp_angle(patrol_vision.rotation, direction_angle, rotation_speed * delta)
 
