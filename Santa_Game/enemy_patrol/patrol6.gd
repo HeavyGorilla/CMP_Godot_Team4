@@ -3,15 +3,15 @@ extends CharacterBody2D
 @export var speed = 200
 var patrol_vision_scene = preload("res://enemy_patrol/patrol_vision.tscn")
 var patrol_vision
-var rotation_speed = 7.0  # 회전 속도 조절
+var rotation_speed = 7.0  # Rotation speed of the 'patrol'
 
-# Path2D
-var path_nodes = [] # 묙표 노드 위치 저장 인덱
-var current_node_index = 0  # 현재 목표 노드 인덱스
+# Path of the patrol
+var path_nodes = [] # Index to store path node positions
+var current_node_index = 0  # Current target node index
 
 # Patrol Animation
 @onready var animation = $AnimatedSprite2D
-var facing_right = false  # 캐릭터가 오른쪽을 바라보고 있는지 여부
+var facing_right = false  # Whether the character is facing right
 
 func _ready():
 	if patrol_vision_scene:
@@ -20,7 +20,7 @@ func _ready():
 	else:
 		print("경고: patrol_vision 장면을 로드할 수 없음.")
 		
-	# Patrol에 따라 달라짐: range, path#
+	# Differs by the Patrol: range, path#
 	for i in range(1, 5):
 		var node = get_node("../path6/Marker2D" + str(i))
 		path_nodes.append(node.position)
@@ -32,13 +32,13 @@ func _ready():
 #	move_timer.start()
 
 func _process(delta):
-	# 이동 로직
+	# Movement logic
 	var target_position = path_nodes[current_node_index]
 	var distance_to_target = position.distance_to(target_position)
 	var move_step = speed * delta
 
 
-	# velocity를 통해 시야 방향 조절
+	# Adjust the direction of view through velocity
 	var direction = (target_position - position).normalized()
 	velocity = direction * speed
 
@@ -53,14 +53,14 @@ func _process(delta):
 	# Patrol AnimatedSprite2D direction
 	update_direction(direction)
 
-	# 시야의 방향 업데이트
+	# Update the direction of 'patrol_vision'
 	if patrol_vision and velocity != Vector2.ZERO:
-		patrol_vision.global_position = global_position  # 경비병과 같은 위치로 설정
+		patrol_vision.global_position = global_position  # Set to the same position as the patrol
 		var direction_angle = atan2(velocity.y, velocity.x)
 		patrol_vision.rotation = lerp_angle(patrol_vision.rotation, direction_angle, rotation_speed * delta)
 
-# 캐릭터의 방향 업데이트
+# Update the direction of the character
 func update_direction(direction: Vector2):
 	if direction.x != 0:
 		facing_right = direction.x > 0
-		animation.flip_h = facing_right  # 스프라이트 방향 변경
+		animation.flip_h = facing_right  # Change sprite direction
