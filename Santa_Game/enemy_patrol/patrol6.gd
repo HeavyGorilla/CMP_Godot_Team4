@@ -25,12 +25,6 @@ func _ready():
 		var node = get_node("../path6/Marker2D" + str(i))
 		path_nodes.append(node.position)
 
-	# test용 이동
-#	add_child(move_timer)
-#	move_timer.wait_time = 1  # n초마다 방향 변경
-#	move_timer.connect("timeout", Callable(self, "_on_move_timer_timeout"))
-#	move_timer.start()
-
 func _process(delta):
 	# Movement logic
 	var target_position = path_nodes[current_node_index]
