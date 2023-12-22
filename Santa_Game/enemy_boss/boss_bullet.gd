@@ -1,9 +1,16 @@
+'''
+This script manages the movement of bullets, handles collisions, and deals damage to the player when a collision occurs.
+Bullet Movement and Collision Handling:
+	The script controls the movement of a bullet at a specified speed, following a set direction when it's initially fired.
+	When the bullet collides with another object, if that object belongs to the "player" group, it inflicts damage on the player and removes the bullet.
+'''
+
 extends Area2D
 
 @export var damage = 20
-@export var speed = 500  # 탄막 속도
-var direction = Vector2.ZERO  # 이동 방향
-var is_direction_set = false # 직선 발사 때 이동 방향 바뀌지 않도록
+@export var speed = 500  # Bullet Speed
+var direction = Vector2.ZERO  # Set direction of the bullet 
+var is_direction_set = false # To ensure that the direction remains unchanged during straight-line firing
 
 func _ready():
 	pass
@@ -20,8 +27,8 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if body.is_in_group("player"):
-		# 플레이어와 충돌 시 처리
-		# 데미지 처리 등
+		# Collision with 'player'
+		# Damage player logic
 		print(body.name)
 		body.take_damage(damage)
 		queue_free()
