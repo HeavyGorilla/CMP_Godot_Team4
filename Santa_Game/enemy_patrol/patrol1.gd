@@ -1,5 +1,6 @@
 '''
 'patrol' scene will instantiate the 'patrol_vision' scene and manage its directions followed by 'patrol's direction.
+Used 'Marker2D' in the level scene to define 'the patrol's path.
 
 The script is for 'patrol' scenes. Generally, it will manage the following features:
 1. Patrol Path Navigation:
