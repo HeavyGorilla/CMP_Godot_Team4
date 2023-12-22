@@ -1,5 +1,7 @@
 '''
 For 'boss_bullet' scene.
+boss_bullet scene is instantiated by 'boss' and executes the features by the script.
+
 This script manages the movement of bullets, handles collisions, and deals damage to the player when a collision occurs.
 Bullet Movement and Collision Handling:
 	The script controls the movement of a bullet at a specified speed, following a set direction when it's initially fired.
