@@ -1,3 +1,17 @@
+'''
+'patrol' scene will instantiate the 'patrol_vision' scene and manage its directions followed by 'patrol's direction.
+
+The script is for 'patrol' scenes. Generally, it will manage the following features:
+1. Patrol Path Navigation:
+	It guides a character to follow a predefined path of nodes, automatically moving and rotating along this path.
+
+2. Dynamic Vision System:
+	Integrates a vision system that aligns with the character's position and direction, likely for detecting other entities.
+
+3. Sprite Animation Control:
+	Manages the character's sprite orientation, flipping it to match the movement direction.
+'''
+
 extends CharacterBody2D
 
 @export var speed = 200
