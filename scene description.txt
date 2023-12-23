@@ -32,3 +32,4 @@ stage2clear: This scene means that you clear level2.
 instruction1: This scene was created for instruction page1.
 instruction2: This scene was created for instruction page2.
 instruction3: This scene was created for instruction page3.
+setting&credit: This scene was made for setting and credit. You can adjust volume of game and see our credit.
