@@ -1,0 +1,61 @@
+<scene description>
+
+boss: This is scene for enemy 'boss'. In this scene, it will work as a boss character, and show it's HP bar.
+boss_bullet: This scene works as a projectile of the boss. It will shoot to the setted direction. If it hits the player, than it will damage the player.
+patrol1,2,3,4,5,6: 'patrol' scene will instantiate the 'patrol_vision' scene and manage its directions followed by 'patrol's direction. Used 'Marker2D' in the level scene to define 'the patrol's path. I created a different script for each patrol.
+patrol_vision: The 'patrol_vision' scene will manage the core features for 'patrol's eye-sight. It detects the player and checks whether an obstacle is in the way or not using 'RayCast2D'
+
+Level1: The game scene of Stage 1.
+Level2: The game scene of Stage 2.
+level1_map: A map of Stage 1 consisting of TimeMap.
+level1_deco: The ornaments of Stage 1.
+gift: Manages properties of a gift and code.
+prison: Manages properties of a prison and code.
+interaction_manager:  Prompts to press Space on top of the prison to rescue.
+hohoho, rescue: Sound effects used in Stage 1.
+tree: The scene used for trees of Stage 2.
+
+Player1: This is the scene for the Santa character in the first game. In this scene, Santa can push presents.
+Player2: This is the scene for the Santa character in the second game. In this scene, Santa can perform a snowball attack.
+Bullet: This is the scene for the snowball that Santa uses when attacking. The snowball in this scene breaks upon hitting something.
+heal: This is the scene for the healing pack that increases Santa's health. It sets the health to 100 and boosts speed.
+
+main: The game scene of firstpage(mainpage).
+exit: This scene was created to get out of the game.
+firstmusic: This scene was created for firstpage(mainpage) music.
+GameStart: This scene was created to move to stage1.
+Instruction: This scene was created to move to game instructions.
+setting: This scene was created to move to setting & credit.
+gameover: This scene means that you lose the game.
+stage1clear: This scene means that you clear level1.
+stage2clear: This scene means that you clear level2.
+instruction1: This scene was created for instruction page1.
+instruction2: This scene was created for instruction page2.
+instruction3: This scene was created for instruction page3.
+
+[script]
+exit: This script was created to quit the game.
+GameStart: This script was created to move to Level1 scene.
+Instruction: This script was created to move to instruction scenes.
+main: This script was created for the firstpage(mainpage) of the game.
+setting: This script was created to move to see setting and credit.
+gameover: This script was created to turn off level1 and 2 songs due to you lose the game.
+Next: This script was made to move from level1 to level2.
+Quit: This script was made to quit the game.
+Restart: This script was made to move from level2 to main.
+Retry: This script was made to move from gameover scene to main scene.
+stage1clear: This script was made to manage stage1clear condition.
+stage2clear: This script was made to manage stage2clear condition.
+ins1_ins2, ins1_main, ins2_ins1, ins2_ins3, ins2_main, ins3_ins2, ins3_main: Scripts that move from the page in front of the underbar to the page in the back.
+
+gift: deals with the collision between a gift and a chimney.
+giftPointLabel: Manages the points of the gift.
+PointLabel: Manages the points.
+interaction_manager: Prompts to press Space on top of the prison to rescue.
+prison: Manages areas of InteractionManger.
+Deer: Plays the animation effects when rescued.
+
+Player1.gd: This is the script for Player1.tscn, supporting animations and actions for pushing presents.
+Player2.gd: This is the script for Player2.tscn, supporting animations and actions for attacking.
+Bullet.gd: This is the script for Bullet.tscn. It causes damage to the boss upon collision, supports an animation for breaking upon hitting something, and removes itself when it exits the screen.
+heal.gd: This is the script for heal.tscn. When a player interacts with it, it sets their health to 100 and increases their speed.
