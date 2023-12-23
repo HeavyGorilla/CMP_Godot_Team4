@@ -1,6 +1,5 @@
+# This script was created to decrease musics' volumes.
 extends Area2D
-
-
 
 func _ready():
 	pass

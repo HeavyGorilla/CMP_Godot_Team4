@@ -1,3 +1,4 @@
+# This script was created to quit the setting page.
 extends Area2D
 
 func _ready():

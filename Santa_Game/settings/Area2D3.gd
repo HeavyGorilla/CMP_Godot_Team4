@@ -1,3 +1,4 @@
+# This script was created to increase musics' volumes.
 extends Area2D
 
 func _ready():
