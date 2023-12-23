@@ -1,0 +1,21 @@
+<scene description>
+
+boss: This is scene for enemy 'boss'. In this scene, it will work as a boss character, and show it's HP bar.
+boss_bullet: This scene works as a projectile of the boss. It will shoot to the setted direction. If it hits the player, than it will damage the player.
+patrol1,2,3,4,5,6: 'patrol' scene will instantiate the 'patrol_vision' scene and manage its directions followed by 'patrol's direction. Used 'Marker2D' in the level scene to define 'the patrol's path. I created a different script for each patrol.
+patrol_vision: The 'patrol_vision' scene will manage the core features for 'patrol's eye-sight. It detects the player and checks whether an obstacle is in the way or not using 'RayCast2D'
+
+Level1: The game scene of Stage 1.
+Level2: The game scene of Stage 2.
+level1_map: A map of Stage 1 consisting of TimeMap.
+level1_deco: The ornaments of Stage 1.
+gift: Manages properties of a gift and code.
+prison: Manages properties of a prison and code.
+interaction_manager:  Prompts to press Space on top of the prison to rescue.
+hohoho, rescue: Sound effects used in Stage 1.
+tree: The scene used for trees of Stage 2.
+
+Player1: This is the scene for the Santa character in the first game. In this scene, Santa can push presents.
+Player2: This is the scene for the Santa character in the second game. In this scene, Santa can perform a snowball attack.
+Bullet: This is the scene for the snowball that Santa uses when attacking. The snowball in this scene breaks upon hitting something.
+heal: This is the scene for the healing pack that increases Santa's health. It sets the health to 100 and boosts speed.
