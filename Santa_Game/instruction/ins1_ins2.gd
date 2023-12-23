@@ -1,3 +1,4 @@
+# This is the script that move from instruction1 to instruction2.
 extends Area2D
 
 func _ready():
