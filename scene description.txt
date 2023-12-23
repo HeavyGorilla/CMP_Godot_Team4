@@ -32,30 +32,3 @@ stage2clear: This scene means that you clear level2.
 instruction1: This scene was created for instruction page1.
 instruction2: This scene was created for instruction page2.
 instruction3: This scene was created for instruction page3.
-
-[script]
-exit: This script was created to quit the game.
-GameStart: This script was created to move to Level1 scene.
-Instruction: This script was created to move to instruction scenes.
-main: This script was created for the firstpage(mainpage) of the game.
-setting: This script was created to move to see setting and credit.
-gameover: This script was created to turn off level1 and 2 songs due to you lose the game.
-Next: This script was made to move from level1 to level2.
-Quit: This script was made to quit the game.
-Restart: This script was made to move from level2 to main.
-Retry: This script was made to move from gameover scene to main scene.
-stage1clear: This script was made to manage stage1clear condition.
-stage2clear: This script was made to manage stage2clear condition.
-ins1_ins2, ins1_main, ins2_ins1, ins2_ins3, ins2_main, ins3_ins2, ins3_main: Scripts that move from the page in front of the underbar to the page in the back.
-
-gift: deals with the collision between a gift and a chimney.
-giftPointLabel: Manages the points of the gift.
-PointLabel: Manages the points.
-interaction_manager: Prompts to press Space on top of the prison to rescue.
-prison: Manages areas of InteractionManger.
-Deer: Plays the animation effects when rescued.
-
-Player1.gd: This is the script for Player1.tscn, supporting animations and actions for pushing presents.
-Player2.gd: This is the script for Player2.tscn, supporting animations and actions for attacking.
-Bullet.gd: This is the script for Bullet.tscn. It causes damage to the boss upon collision, supports an animation for breaking upon hitting something, and removes itself when it exits the screen.
-heal.gd: This is the script for heal.tscn. When a player interacts with it, it sets their health to 100 and increases their speed.
