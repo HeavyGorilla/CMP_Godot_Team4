@@ -1,3 +1,4 @@
+# This script was made to move from gameover scene to main scene.
 extends Area2D
 
 func _ready():

@@ -1,3 +1,4 @@
+# This script was made to quit the game.
 extends Area2D
 
 func _ready():

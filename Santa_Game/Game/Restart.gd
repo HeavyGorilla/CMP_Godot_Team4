@@ -1,3 +1,4 @@
+# This script was made to move from level2 to main.
 extends Area2D
 
 func _ready():

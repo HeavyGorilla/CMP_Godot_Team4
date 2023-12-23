@@ -1,3 +1,4 @@
+# This script was made to move from level1 to level2.
 extends Area2D
 
 func _ready():
