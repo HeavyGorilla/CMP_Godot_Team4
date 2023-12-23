@@ -1,3 +1,8 @@
+"""
+This is the script for Player2.tscn,
+supporting animations and actions for attacking.
+"""
+
 extends CharacterBody2D
 
 class_name santa2
@@ -11,9 +16,9 @@ var is_interacting_with_box = false
 var is_shooting = false
 var can_shoot = true
 
-var charge = 0  # 기 축적 변수
-var max_charge = 60  # 최대 기 축적량
-var charge_rate = 60  # 초당 기 축적량
+var charge = 0  # charge var
+var max_charge = 60  # max charge
+var charge_rate = 60  # charge for delta
 
 
 enum Direction { UP, DOWN, LEFT, RIGHT }
@@ -33,7 +38,6 @@ func _ready():
 	animated_sprite.connect("animation_finished", Callable(self, "_on_AnimatedSprite2D_animation_finished"))
 
 func _physics_process(_delta):
-	print(speed)
 	$EnergyBar.value = charge
 	$HealthBar.value = health
 
@@ -61,7 +65,7 @@ func _physics_process(_delta):
 
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and can_shoot:
 		charge += charge_rate * _delta
-		charge = min(charge, max_charge)  # 최대 축적량을 넘지 않도록 함
+		charge = min(charge, max_charge)  # restrict charge
 
 	if Input.is_action_just_released("shoot") and can_shoot:
 		is_shooting = true  # Set to true when shooting starts
@@ -79,7 +83,7 @@ func _physics_process(_delta):
 				animated_sprite.flip_h = true
 				animated_sprite.play("left_attack")
 		_shoot()
-		charge = 0  # 기 축적량 초기화
+		charge = 0  # reset charge
 
 		
 	if is_interacting_with_box:

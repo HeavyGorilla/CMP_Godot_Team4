@@ -1,3 +1,8 @@
+"""
+This is the script for Player1.tscn,
+supporting animations and actions for pushing presents.
+"""
+
 extends CharacterBody2D
 
 class_name santa

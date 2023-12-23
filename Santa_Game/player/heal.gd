@@ -1,3 +1,9 @@
+"""
+This is the script for heal.
+tscn. When a player interacts with it, 
+it sets their health to 100 and increases their speed.
+"""
+
 extends Area2D
 
 func  _process(delta):

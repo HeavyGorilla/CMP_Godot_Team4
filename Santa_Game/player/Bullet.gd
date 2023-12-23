@@ -1,3 +1,9 @@
+"""This is the script for Bullet.tscn.
+It causes damage to the boss upon collision, supports an animation 
+for breaking upon hitting something, 
+and removes itself when it exits the screen.
+"""
+
 extends Area2D
  
 var direction : Vector2 = Vector2.RIGHT
